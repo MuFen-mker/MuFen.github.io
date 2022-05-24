@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/CSS.css">      <!--导入CSS样式-->
+    <script type="text/javascript" src="js/jQuery 3.4.1.js"></script>
+    <script src="js/time.js"></script>              <!--导入时间JS-->
+    <script src="js/MusicPlay.js"></script>         <!--导入音乐播放器JS-->
+    <title>MuFen的个人网站-主页</title>
+</head>
+<body>
+    <script src="js/Mouse E.js"></script>
+    <script type="text/javascript" src="js/background.js"></script>     <!--导入背景JS-->
+    <div class="head">                                                  <!--头(没我秃)-->
+        <p><img class="tx" src="img/tx.jpg" ></p>
+        <span class="line">MuFen</span><span class="tittt">的个人网站</span>
+    </div>
+    <div>
+        <div class="time">
+            <span class="timetxt">「时间」&nbsp;&nbsp;<span class="time" id="TimeDiv"></span></span>
+            <span class="oneY">你还有好多未完成的梦，你有什么理由停下脚步&nbsp; <br>「佚名」</span>            
+        </div>
+    </div>
+    <div class="DH">        <!--导航栏-->
+        <ul>
+            <li><span><a class="A1" href="index.html">首页</a></span></li>
+            <li><span><a class="A2" href="html/GHJC.html">干货教程</a></span></li>
+            <li><span><a class="A2" href="html/RJTJ.html">软件推荐</a></span></li> 
+            <li><span><a class="A2" href="html/CYWZ.html">常用网站</a></span></li>
+            <li><span><a class="A2" href="html/YXTJ.html">游戏推荐</a></span></li>
+            <li><span><a class="A2" href="html/GY.html">关于</a></span></li>
+        </ul>
+    </div>
+    <div class="body">                                              <!--身-->
+        <div class="Indexbodytxt">
+            <div class="IndexTOdiv">
+                <p class="IndexTOp">A Simple Little Website</p>
+                <p class="IndexTOpfor2">Welcome To My Home Page</p>                
+            </div>
+        </div>
+        <div class="TOOLSDIV">
+            <div class="player">        <!--音乐播放器-->
+            <div>
+		<audio id="audio" src="music/Serenade.mp3" preload>     <!--播放器错误提示-->
+			对不起，您的浏览器不支持HTML5音频播放。
+		</audio>
+
+		<div align="center" id="CDimage">
+			<img class="musicCD" src="img/cd.png" />
+		</div>
+		<div class="musicVolume" align="center">
+			<input id="volume" type="range" min="0" max="1" step="0.1" />
+		</div>
+
+		<div class="musicTitle" align="center">
+            <span id="title">Love Story</span>
+		</div>
+
+		<div class="buttons" align="center">
+			<button class="musicButton" id="prevBtn"><img src="img/syis.png" class="musicbutton"/> </button>
+			<button class="musicButton" id="toggleBtn"><img src="img/BF.png" class="musicbutton"/></button>
+			<button class="musicButton" id="nextBtn"><img src="img/xyis.png" class="musicbutton"/></button>
+		</div>
+        <script src="js/MusicPlay.js"></script>
+               </div>
+            </div>
+            <div class="calendar">      <!--日历-->
+                <div class="calenderD" align="center">
+
+                    <div class="title">
+                        <h1 class="orange" id="calendar-title">Month</h1>
+                        <h2 class="orange" id="calendar-year">Year</h2>
+                      </div>
+                      <div class="calendarDays">
+                          <div class="calendarDays">
+                        <div class="lightgrey body-list">
+                          <ul>
+                            <li>MON</li>
+                            <li>TUE</li>
+                            <li>WED</li>
+                            <li>THU</li>
+                            <li>FRI</li>
+                            <li>SAT</li>
+                            <li>SUN</li>
+                          </ul>
+                        </div>
+                        <div class="darkgrey body-list">
+                          <ul id="days">
+                            <script src="js/calendar.js"></script>        
+                          </ul>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+    <div class="tail">      <!--底-->                                                   <!--经典三段式-->
+        <img class="tailImgR" src="img/DLR.png">
+        <img class="tailImgL" src="img/DLL.png">
+        <p class="DLNet">
+            © 2021 MuFen-Personal Website(Plagiarism Is Prohibited)
+        </p>
+        <p class="DLtxt">
+            By:MuFen
+        </p>
+    </div>              
+</body>
+</html>
