@@ -2,17 +2,23 @@
 @font-face{
     font-family: '方正粗圆';
     src: url('../font/FZCY.ttf'),
-    url('../font/FZCY.eot');
+    url('../font/FZCY.eot'),
+    url('../font/FZCY.svg'),
+    url('../font/FZCY.woff');
 }
 @font-face {
     font-family: 'Sweel';
     src: url('../font/sweel.ttf'),
-    url('../font/sweel.eot');
+    url('../font/sweel.eot'),
+    url('../font/sweel.svg'),
+    url('../font/sweel.woff');
 }
 @font-face {
     font-family: 'AW';
     src: url('../font/AW.ttf'),
-    url('../font/AW.eot');
+    url('../font/AW.eot'),
+    url('../font/AW.svg'),
+    url('../font/AW.woff');
 }
 /*页面宽度大于960个像素选择这个样式*/
 @media screen and (min-width: 960px){
