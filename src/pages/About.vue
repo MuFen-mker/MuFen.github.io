@@ -185,10 +185,10 @@ export default {
 }
 .content h1 {
   text-align: center;
-  font-size: 48px;
+  font-size: 40px;
 }
 .content p {
   text-indent: 2em;
-  font-size: 24px;
+  font-size: 22px;
 }
 </style>

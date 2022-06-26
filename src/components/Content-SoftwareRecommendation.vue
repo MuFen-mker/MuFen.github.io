@@ -297,12 +297,11 @@ export default {
   font-size: 22.4px;
 }
 .Tips {
-  font-size: 1.32px;
   text-align: center;
 }
 .Tips p {
   margin: 0 5%;
-  font-size: 1.32px;
+  font-size: 18px;
   text-align: center;
   vertical-align: middle;
   display: flex;
@@ -313,7 +312,7 @@ export default {
 .brieflyExplain {
   margin: 0 0 2% 2%;
   height: 60%;
-  font-size: 1.32px;
+  font-size: 18px;
 }
 .Link {
   margin: 0 0 0 2%;

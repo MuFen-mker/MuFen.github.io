@@ -497,7 +497,7 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  height: 193px;
+  height: 100%;
   border-radius: 0 15px 0 0;
   box-shadow: -7px 3px 20px 2px black;
   z-index: 50;

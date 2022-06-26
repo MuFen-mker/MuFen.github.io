@@ -198,7 +198,7 @@ export default {
   font-size: 22.4px;
 }
 .Tips {
-  font-size: 1.32px;
+  font-size: 18px;
   text-align: center;
 }
 </style>
