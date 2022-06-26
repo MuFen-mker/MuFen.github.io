@@ -8,17 +8,36 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@moefe/vue-aplayer": "^2.0.0-beta.5",
+    "amfe-flexible": "^2.2.1",
+    "aplayer": "^1.10.1",
+    "axios": "^0.27.2",
+    "babel-plugin-import": "^1.13.5",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "element-plus": "^2.2.6",
+    "less-loader": "^11.0.0",
+    "lib-flexible": "^0.3.2",
+    "nanoid": "^4.0.0",
+    "px32px-loader": "^0.1.9",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.16",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@icon-park/vue-next": "^1.4.1",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "node-sass": "^7.0.1",
+    "postcss-pxtorem": "^5.1.1",
+    "sass-loader": "^13.0.0",
+    "unplugin-auto-import": "^0.8.8",
+    "unplugin-vue-components": "^0.19.6"
   },
   "eslintConfig": {
     "root": true,
