@@ -613,12 +613,13 @@ export default {
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
+  margin: 0 0 0 10px;
 }
 .title-Narrow h1 {
   font-weight: normal;
-  display: block;
+  display: flex;
   font-size: 24px;
-  width: 30;
+  width: 500px;
   text-align: left;
   white-space: wrap;
   overflow: hidden;
