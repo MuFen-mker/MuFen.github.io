@@ -34,7 +34,7 @@ export default {
   user-select: none;
   width: 100%;
   height: 93px;
-  margin: 160px auto 0;
+  margin: 80px auto 0;
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
   border-top: 5px solid orange;
@@ -65,6 +65,57 @@ export default {
   font-weight: normal;
   font-size: 18px;
   color: black;
-  line-height: 65px;
+  line-height: 40px;
+}
+@media screen and (max-width: 785px) {
+  .tailImgL {
+    display: none;
+  }
+  .DLtxt {
+    text-align: left;
+    margin-left: 10px;
+  }
+  .DLNet {
+    text-align: left;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 633px) {
+  .DLtxt {
+    font-size: 16px;
+  }
+  .DLNet {
+    font-size: 16px;
+  }
+  .tail {
+    height: 75px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 568px) {
+  .DLtxt {
+    font-size: 12px;
+  }
+  .DLNet {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 435px) {
+  .tail {
+    height: 60px;
+  }
+  .DLNet{
+   line-height: 30px;
+  }
+}
+@media screen and (max-width: 417px) {
+  .tail {
+    height: 40px;
+  }
+  .DLNet{
+   line-height: 17px;
+  }
 }
 </style>

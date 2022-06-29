@@ -24,7 +24,7 @@
           <div :class="topMode ? 'buttons-Narrow' : 'buttons'">
             <div :class="topMode ? 'title-Narrow' : 'title'">
               <h1>{{ nameOfTheSong }}</h1>
-              <br v-show="!topMode" />
+              <br class="Changes" v-show="!topMode" />
               <p>{{ singerName }}</p>
             </div>
             <audio ref="audio" :src="songAddress" style="display: none"></audio>
@@ -432,9 +432,9 @@ export default {
   -ms-user-select: none;
   user-select: none;
   position: absolute;
-  top: 550px;
+  top: 520px;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   width: 800px;
   display: flex;
   margin: 0 auto;
@@ -748,5 +748,68 @@ export default {
   width: 70%;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 845px) {
+  .NeteaseCloudMusicPlayer {
+    width: 83%;
+  }
+  .title {
+    margin: 20px 0 0 45px;
+  }
+  .title h1 {
+    width: 90%;
+  }
+  .buttons input {
+    margin: 0% 0% 0% 15%;
+  }
+  .Changes {
+    display: none;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 746px) {
+  .NeteaseCloudMusicPlayer {
+    width: 90%;
+  }
+  .title {
+    margin: 20px 0 0 45px;
+  }
+  .title h1 {
+    width: 90%;
+  }
+  .buttons input {
+    margin: 0% 0% 0% 15%;
+  }
+  .Changes {
+    display: none;
+  }
+}
+@media screen and (max-width: 620px) {
+  .musicDuration {
+    margin-left: 1%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .NeteaseCloudMusicPlayer {
+    top: 460px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .playButton {
+    margin: 0% 0 2% 0;
+  }
+  .title {
+    margin: 10px 0 0 20px;
+  }
+  .title h1 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .buttons input[data-v-599f5e4a] {
+    margin: 0% 0% 0% 10%;
+  }
 }
 </style>

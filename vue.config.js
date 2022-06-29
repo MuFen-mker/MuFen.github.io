@@ -1,5 +1,6 @@
 //vue.config.js页面
 const { defineConfig } = require('@vue/cli-service')
+const webpack = require("webpack")
 
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
@@ -17,6 +18,11 @@ module.exports = defineConfig({
       Components({
         resolvers: [ElementPlusResolver()],
       }),
+      new webpack.ProvidePlugin({
+        $:"jquery",
+        jQuery:"jquery",
+        "windows.jQuery":"jquery"
+    })
     ],
   },
 })

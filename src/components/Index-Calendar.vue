@@ -123,7 +123,7 @@ export default {
   background-position-y: 20%;
   border-radius: 5px;
   box-shadow: 0px 2px 20px 4px black;
-  z-index: -1;
+  transform: scale(100%);
 }
 .Calendar::after {
   content: '';
@@ -187,5 +187,60 @@ h2 {
   background: rgba(255, 166, 0, 0.11);
   border: 1px solid orange;
   font-size: 16px;
+}
+@media screen and (max-width: 1200px) {
+  .Calendar {
+    margin: 380px auto 0;
+  }
+}
+@media screen and (max-width: 845px) {
+  .Calendar {
+    width: 83%;
+    margin: 300px auto 0;
+  }
+
+  ul li {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 746px) {
+  .Calendar {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 627px) {
+  ul li {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .Calendar {
+    margin: 260px auto 0;
+  }
+}
+@media screen and (max-width: 545px) {
+  ul li{
+    margin: 0.5% 1.3%;
+  }
+  ul{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  ul li {
+    width: 10.5%;
+    transform: scale(0.8);
+    margin: 1% 1.2%;
+  }
+  h1{
+    font-size:24px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+  h2{
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
 }
 </style>

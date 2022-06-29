@@ -1,24 +1,57 @@
 <template>
   <div class="NavigationBar">
-    <div class="timerAndWord">
-      <div class="timer">
-        <h2>「Time」&nbsp;{{ time }}</h2>
-      </div>
-      <div class="aWord">
-        <h2>{{ aWord }}</h2>
-        <h2>「{{ aWordFrom }}」</h2>
+    <div class="container timerAndWord">
+      <div class="rowTimerAndWord row">
+        <div
+          class="col-xxl-4 col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 timer"
+        >
+          <h2>「Time」&nbsp;{{ time }}</h2>
+        </div>
+        <div
+          class="col-xxl-8 col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 aWord"
+        >
+          <h2>{{ aWord }}</h2>
+          <h2>「{{ aWordFrom }}」</h2>
+        </div>
       </div>
     </div>
-    <div class="navigationBar">
-      <ul>
-        <li class="Activation">{{ Index }}</li>
-        <li @click="goToWebFrontEnd()">{{ WebFrontEnd }}</li>
-        <li @click="goToDryingTutorial()">{{ DryingTutorial }}</li>
-        <li @click="goToSoftwareRecommendation()">
+    <div class="container navigationBar">
+      <ul class="rowNavigationBar row">
+        <li
+          class="item col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 Activation"
+        >
+          {{ Index }}
+        </li>
+        <li
+          class="item col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"
+          @click="goToWebFrontEnd()"
+        >
+          {{ WebFrontEnd }}
+        </li>
+        <li
+          class="item col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"
+          @click="goToDryingTutorial()"
+        >
+          {{ DryingTutorial }}
+        </li>
+        <li
+          class="item col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"
+          @click="goToSoftwareRecommendation()"
+        >
           {{ SoftwareRecommendation }}
         </li>
-        <li @click="goToContentCommonWebsite()">{{ WebsiteCollection }}</li>
-        <li @click="goToAbout()">{{ About }}</li>
+        <li
+          class="item col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"
+          @click="goToContentCommonWebsite()"
+        >
+          {{ WebsiteCollection }}
+        </li>
+        <li
+          class="item col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"
+          @click="goToAbout()"
+        >
+          {{ About }}
+        </li>
       </ul>
     </div>
   </div>
@@ -150,6 +183,9 @@ export default {
 </script>
 
 <style scoped>
+.rowTimerAndWord {
+  margin: 0 auto;
+}
 .NavigationBar {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -164,16 +200,9 @@ export default {
   border-bottom: 3px solid orange !important;
   color: orange !important;
 }
-.timer {
-  margin-left: 1%;
-}
 .timer h2 {
   font-size: 20px;
-  margin-left: 1%;
   display: inline-block;
-}
-.aWord {
-  margin-right: 1%;
 }
 .aWord h2 {
   font-size: 20px;
@@ -183,11 +212,11 @@ export default {
   margin-top: 60.8px;
 }
 .navigationBar > ul {
+  padding: 0;
   text-align: center;
 }
 .navigationBar > ul > li {
   display: inline-block;
-  padding: 0 2%;
   box-sizing: border-box;
   border-bottom: 3px solid black;
   font-size: 27.2px;
@@ -196,8 +225,58 @@ export default {
   color: rgb(57, 192, 255);
   border-bottom: 3px solid rgb(57, 192, 255);
 }
-.timerAndWord {
-  display: flex;
-  justify-content: space-between;
+@media screen and (max-width: 1200px) {
+  .timer {
+    font-size: 20px;
+    text-align: center;
+  }
+  .aWord {
+    line-height: 1rem;
+    margin-top: 20px;
+  }
+  .aWord h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 995px) {
+  .navigationBar > ul > li {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 775px) {
+  .navigationBar > ul > li {
+    font-size: 18px;
+  }
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 99%;
+  }
+  .row > * {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 610px) {
+  .navigationBar > ul > li {
+    font-size: 16px;
+  }
+  .timer h2 {
+    font-size: 16px;
+  }
+  .aWord h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 543px) {
+  .navigationBar > ul > li {
+    font-size: 14px;
+  }
+  .timer h2 {
+    font-size: 14px;
+  }
+  .aWord h2 {
+    font-size: 14px;
+  }
 }
 </style>
