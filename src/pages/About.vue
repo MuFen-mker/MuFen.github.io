@@ -47,6 +47,15 @@
             >Vue组件状态管理</el-descriptions-item
           >
           <el-descriptions-item
+            label="vue-prism-editor"
+            label-align="center"
+            align="center"
+            label-class-name="my-label"
+            class-name="my-content"
+            width="150px"
+            >页面代码块</el-descriptions-item
+          >
+          <el-descriptions-item
             label="Axios"
             label-align="center"
             align="center"
@@ -90,6 +99,15 @@
             class-name="my-content"
             width="150px"
             >项目打包</el-descriptions-item
+          >
+          <el-descriptions-item
+            label="Bootstrap"
+            label-align="center"
+            align="center"
+            label-class-name="my-label"
+            class-name="my-content"
+            width="150px"
+            >响应式适配</el-descriptions-item
           >
         </el-descriptions>
       </div>
@@ -248,9 +266,18 @@ p {
   .Connect p {
     font-size: 18px;
   }
+  .item {
+    width: 90%;
+  }
+  .content {
+    width: 90%;
+  }
+  .Connect {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 587px) {
-  .item{
+  .item {
     border: 1px solid black;
   }
   .item p {
@@ -293,7 +320,7 @@ p {
   }
 }
 @media screen and (max-width: 410px) {
-  .item p{
+  .item p {
     width: 40%;
   }
 }
