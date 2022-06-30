@@ -18,7 +18,7 @@
           }"
         >
           <div @click="minimize = true" v-if="topMode" class="leftOne">
-            <left-one theme="outline" size="30" fill="#000000" />
+            <left-one theme="outline" size="100%" fill="#000000" />
           </div>
           <div v-show="!topMode" class="maskLayer"></div>
           <div :class="topMode ? 'buttons-Narrow' : 'buttons'">
@@ -56,27 +56,27 @@
                 <go-start
                   @click="previousSong"
                   theme="outline"
-                  size="30"
+                  size="100%"
                   :fill="topMode ? '#000000' : '#ffffff'"
                 />
                 <pause
                   v-show="showPlayOne"
                   @click="playClick()"
                   theme="outline"
-                  size="30"
+                  size="100%"
                   :fill="topMode ? '#000000' : '#ffffff'"
                 />
                 <play-one
                   v-show="showPause"
                   @click="playClick()"
                   theme="outline"
-                  size="30"
+                  size="100%"
                   :fill="topMode ? '#000000' : '#ffffff'"
                 />
                 <go-end
                   @click="nextSong"
                   theme="outline"
-                  size="30"
+                  size="100%"
                   :fill="topMode ? '#000000' : '#ffffff'"
                 />
               </div>
@@ -96,7 +96,7 @@
         >
           <img class="Cover-Mini" :src="Cover" />
           <div class="RightOne">
-            <right-one theme="outline" size="30" fill="#000000" />
+            <right-one theme="outline" size="100%" fill="#000000" />
           </div>
         </div>
       </transition>
@@ -423,6 +423,9 @@ export default {
 </script>
 
 <style scoped>
+p {
+  margin-bottom: 0;
+}
 /* 主页样式 */
 .NeteaseCloudMusicPlayer {
   -webkit-touch-callout: none;
@@ -572,6 +575,9 @@ export default {
   background: rgb(240, 240, 240);
   z-index: -1;
   border-radius: 0 3px 3px 0;
+}
+.i-icon {
+  height: 30px;
 }
 .RightOne {
   display: flex;
@@ -749,6 +755,22 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 1200px) {
+  .title-Narrow h1 {
+    width: 100%;
+  }
+  .title-Narrow {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 968px) {
+  .musicDuration-Narrow {
+    display: none;
+  }
+  .musicBar-Narrow {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 845px) {
   .NeteaseCloudMusicPlayer {
     width: 83%;
@@ -790,10 +812,26 @@ export default {
   .musicDuration {
     margin-left: 1%;
   }
-}
-@media screen and (max-width: 620px) {
   .NeteaseCloudMusicPlayer {
     top: 460px;
+  }
+  .title-Narrow h1 {
+    font-size: 18px;
+  }
+  .title-Narrow p {
+    font-size: 14px;
+  }
+  .progressBarAndButtonBox-Narrow {
+    width: 100%;
+  }
+    .minimize[data-v-599f5e4a] {
+    height: 70px;
+  }
+  .i-icon {
+    height: 28px;
+  }
+  .NeteaseCloudMusicPlayer-Narrow{
+    height: 70px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -806,10 +844,40 @@ export default {
   .title h1 {
     font-size: 16px;
   }
+  .title-Narrow h1 {
+    font-size: 16px;
+  }
+  .title-Narrow p {
+    font-size: 12px;
+  }
+  .minimize[data-v-599f5e4a] {
+    height: 60px;
+  }
+  .i-icon {
+    height: 25px;
+  }
+  .NeteaseCloudMusicPlayer-Narrow {
+    height: 60px;
+  }
 }
 @media screen and (max-width: 400px) {
   .buttons input[data-v-599f5e4a] {
     margin: 0% 0% 0% 10%;
+  }
+  .title-Narrow h1 {
+    font-size: 12px;
+  }
+  .title-Narrow p {
+    font-size: 12px;
+  }
+  .minimize[data-v-599f5e4a] {
+    height: 50px;
+  }
+  .i-icon {
+    height: 25px;
+  }
+  .NeteaseCloudMusicPlayer-Narrow {
+    height: 50px;
   }
 }
 </style>

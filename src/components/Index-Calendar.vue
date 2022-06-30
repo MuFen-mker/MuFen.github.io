@@ -186,7 +186,6 @@ h2 {
   color: rgb(255, 181, 43);
   background: rgba(255, 166, 0, 0.11);
   border: 1px solid orange;
-  font-size: 16px;
 }
 @media screen and (max-width: 1200px) {
   .Calendar {

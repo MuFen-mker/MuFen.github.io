@@ -8,9 +8,9 @@
       </transition>
     </router-view>
     <Index-Bottom></Index-Bottom>
-    <el-backtop :right="150" :bottom="150" style="z-index: 9999999999">
+    <el-backtop style="z-index: 9999999999">
       <div class="topButton">
-        <to-top-one theme="two-tone" size="55" :fill="['#333', '#f5a623']" />
+        <to-top-one theme="two-tone" size="100%" :fill="['#333', '#f5a623']" />
       </div>
     </el-backtop>
   </div>
@@ -44,6 +44,8 @@ export default {
   --el-backtop-hover-bg-color: #ffffff00;
   background-color: #ffffff00;
   box-shadow: none;
+  right: 140px !important;
+  bottom: 160px !important;
 }
 .routingTransition-enter-active {
   transition: all 0.5s ease-out;
@@ -60,5 +62,17 @@ export default {
 .routingTransition-enter-to,
 .routingTransition-leave-from {
   opacity: 1;
+}
+@media screen and (max-width: 1480px) {
+  .el-backtop {
+    right: 2% !important;
+    bottom: 10% !important;
+  }
+}
+@media screen and (max-width: 666px) {
+  .el-backtop {
+    right: 2% !important;
+    bottom: 10% !important;
+  }
 }
 </style>

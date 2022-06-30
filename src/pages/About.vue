@@ -97,29 +97,37 @@
         <p>联系方式</p>
       </div>
       <div class="Connect">
-        <div class="icon">
-          <tencent-qq theme="outline" size="48" fill="#000000" />
+        <div>
+          <div class="icon">
+            <tencent-qq theme="outline" size="100%" fill="#000000" />
+          </div>
+          <div class="connectCenter"><p>3550035202</p></div>
         </div>
-        <div class="connectCenter"><p>3550035202</p></div>
-        <div class="icon">
-          <wechat theme="outline" size="48" fill="#000000" />
+        <div>
+          <div class="icon">
+            <wechat theme="outline" size="100%" fill="#000000" />
+          </div>
+          <div class="connectCenter"><p>HaSaKaZe</p></div>
         </div>
-        <div class="connectCenter"><p>HaSaKaZe</p></div>
-        <div class="icon">
-          <mail theme="outline" size="48" fill="#000000" />
+        <div>
+          <div class="icon">
+            <mail theme="outline" size="100%" fill="#000000" />
+          </div>
+          <div class="connectCenter">
+            <p>3550035202@qq.com</p>
+          </div>
         </div>
-        <div class="connectCenter">
-          <p>3550035202@qq.com</p>
-        </div>
-        <div class="icon">
-          <github-one theme="outline" size="48" fill="#000000" />
-        </div>
-        <div class="connectCenter">
-          <p>
-            <a target="_blank" href="https://github.com/MuFen-mker"
-              >https://github.com/MuFen-mker</a
-            >
-          </p>
+        <div>
+          <div class="icon">
+            <github-one theme="outline" size="100%" fill="#000000" />
+          </div>
+          <div class="connectCenter">
+            <p>
+              <a target="_blank" href="https://github.com/MuFen-mker"
+                >GitHub主页</a
+              >
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -138,6 +146,9 @@ export default {
 </script>
 
 <style scoped>
+p {
+  margin-bottom: 0;
+}
 .MainContent {
   margin: 5% auto;
   width: 1120px;
@@ -169,19 +180,21 @@ export default {
   display: flex;
   margin: 0 auto 5%;
   width: 50%;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+.Connect > div {
+  display: flex;
+  width: 100%;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
 }
 .Connect p {
   text-align: right;
   font-size: 24px;
 }
-.connectCenter {
-  width: 90%;
-}
 .icon {
-  width: 10%;
+  height: 48px;
 }
 .content h1 {
   text-align: center;
@@ -190,5 +203,98 @@ export default {
 .content p {
   text-indent: 2em;
   font-size: 22px;
+}
+@media screen and (max-width: 1200px) {
+  .MainContent {
+    width: 93.35%;
+  }
+}
+@media screen and (max-width: 889px) {
+  .item p {
+    font-size: 24px;
+  }
+  .content h1 {
+    font-size: 26px;
+  }
+  .content p {
+    font-size: 18px;
+  }
+  .content {
+    line-height: 30px;
+  }
+  .icon {
+    height: 40px;
+  }
+  .Connect p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 705px) {
+  .item p {
+    font-size: 20px;
+  }
+  .content h1 {
+    font-size: 22px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+  .content {
+    line-height: 25px;
+  }
+  .icon {
+    height: 30px;
+  }
+  .Connect p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 587px) {
+  .item{
+    border: 1px solid black;
+  }
+  .item p {
+    font-size: 16px;
+  }
+  .content h1 {
+    font-size: 18px;
+  }
+  .content p {
+    font-size: 12px;
+  }
+  .content {
+    line-height: 20px;
+  }
+  .icon {
+    height: 25px;
+  }
+  .Connect p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 467px) {
+  .item p {
+    font-size: 14px;
+  }
+  .content h1 {
+    font-size: 14px;
+  }
+  .content p {
+    font-size: 12px;
+  }
+  .content {
+    line-height: 20px;
+  }
+  .icon {
+    height: 16px;
+  }
+  .Connect p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .item p{
+    width: 40%;
+  }
 }
 </style>

@@ -36,19 +36,17 @@
         </transition>
       </div>
     </div>
-    <router-link
-      v-if="onClickToJump"
-      class="routerLink"
-      to="/home"
-    ></router-link>
+    <div v-if="onClickToJump" class="routerLink" @click="goInHome()"></div>
   </div>
 </template>
 
 <script scoped>
 import { reactive, toRefs, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 export default {
   name: 'LoadIng',
   setup() {
+    const router = useRouter()
     let loadTheFirstScreen = reactive({
       loadingText: 'Loading...',
       loadingTextShow: true,
@@ -86,10 +84,52 @@ export default {
 
     onMounted(() => {
       progress()
+      preLoadedResources()
     })
+
+    const goInHome = function () {
+      router.replace('home')
+    }
+
+    const preLoadedResources = function () {
+      // 图片
+      let imgs = [
+        require('@/assets/AE.png'),
+        require('@/assets/AIMP.png'),
+        require('@/assets/Avatar.jpg'),
+        require('@/assets/CalendarBackground.jpg'),
+        require('@/assets/CalendarBackground.jpg'),
+        require('@/assets/ccleane.png'),
+        require('@/assets/CommonWebsiteHeadFigure.jpg'),
+        require('@/assets/CPU-Z.png'),
+        require('@/assets/DG.png'),
+        require('@/assets/DG2.png'),
+        require('@/assets/DLL.png'),
+        require('@/assets/DLR.png'),
+        require('@/assets/DryingTutorialHeadFigure.jpg'),
+        require('@/assets/everything.png'),
+        require('@/assets/huoron.png'),
+        require('@/assets/music-one.png'),
+        require('@/assets/music-one.svg'),
+        require('@/assets/OBS.png'),
+        require('@/assets/playerBackground.jpg'),
+        require('@/assets/PS.png'),
+        require('@/assets/SoftwareRecommendationHeadFigure.jpg'),
+        require('@/assets/tasker.png'),
+        require('@/assets/VSC.png'),
+        require('@/assets/WebFromEndHeadFigure.jpg'),
+      ]
+
+      for (let img of imgs) {
+        let image = new Image()
+        image.src = img
+      }
+    }
+
     return {
       ...toRefs(loadTheFirstScreen),
       ...toRefs(welcome),
+      goInHome,
     }
   },
 }
@@ -110,6 +150,9 @@ export default {
   height: 100%;
   position: absolute;
   z-index: 99999999;
+}
+.routerLink:hover {
+  background: rgba(255, 255, 255, 0);
 }
 .loadingRoot {
   font-size: 16px;

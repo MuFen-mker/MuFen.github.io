@@ -13,16 +13,21 @@
         <p>
           <android
             theme="two-tone"
-            size="30"
+            size="100%"
             :fill="['#333', '#7ed321']"
-          />代表Android应用,<windows
+          />代表Android应用,
+        </p>
+        <p>
+          <windows
             theme="two-tone"
-            size="30"
+            size="100%"
             :fill="['#333', '#4a90e2']"
           />代表Windows应用,
+        </p>
+        <p>
           <open-one
             theme="two-tone"
-            size="30"
+            size="100%"
             :fill="['#333', '#b8e986']"
           />代表文件提取码
         </p>
@@ -52,26 +57,26 @@
                     <android
                       v-if="index.type.android"
                       theme="two-tone"
-                      size="45"
+                      size="100%"
                       :fill="['#333', '#b8e986']"
                     />
                     <windows
                       v-if="index.type.windows"
                       theme="two-tone"
-                      size="45"
+                      size="100%"
                       :fill="['#333', '#4a90e2']"
                     />
-                    <a target="_blank" :href="index.routersRun"
+                    <a class="toLink" target="_blank" :href="index.routersRun"
                       ><download-four
                         theme="two-tone"
-                        size="80"
+                        size="100%"
                         :fill="['#333', '#50e3c2']"
                     /></a>
                   </div>
                   <div v-if="index.encryption" class="password">
                     <open-one
                       theme="two-tone"
-                      size="45"
+                      size="100%"
                       :fill="['#333', '#b8e986']"
                     />
                     <p>{{ index.password }}</p>
@@ -213,6 +218,18 @@ export default {
 </script>
 
 <style scoped>
+.Tips p span {
+  height: 48px;
+}
+.linkType > span {
+  height: 42px;
+}
+.password > span {
+  height: 42px;
+}
+.toLink {
+  height: 80px;
+}
 .Cover {
   background: -webkit-linear-gradient(
     left,
@@ -298,9 +315,12 @@ export default {
 }
 .Tips {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 .Tips p {
-  margin: 0 5%;
   font-size: 18px;
   text-align: center;
   vertical-align: middle;
@@ -341,5 +361,157 @@ export default {
   padding: 0 2%;
   background: rgb(233, 233, 233);
   transform: translateY(30%);
+}
+@media screen and (max-width: 1200px) {
+  .MainContent {
+    width: 93.35%;
+  }
+  .Cover {
+    width: 158px !important;
+  }
+}
+@media screen and (max-width: 974px) {
+  .headDecoration p {
+    font-size: 18px;
+  }
+  .headDecoration {
+    height: 125px;
+  }
+  .Cover {
+    width: 125px !important;
+  }
+  .coverPicture img {
+    height: 260px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .headDecoration p {
+    font-size: 16px;
+  }
+  .headDecoration {
+    height: 110px;
+  }
+  .Cover {
+    width: 110px !important;
+  }
+  .coverPicture img {
+    height: 230px;
+  }
+}
+@media screen and (max-width: 705px) {
+  .Tips p {
+    font-size: 16px;
+  }
+  .externalLink h1 {
+    font-size: 20px;
+  }
+  .externalLink p {
+    font-size: 12px;
+  }
+  .el-collapse {
+    --el-collapse-header-font-size: 24px;
+    --el-collapse-content-font-size: 12px;
+  }
+  .brieflyExplain {
+    font-size: 14px;
+  }
+  .Tips p span {
+    height: 30px;
+  }
+  .linkType > span {
+    height: 30px;
+  }
+  .password > span {
+    height: 30px;
+  }
+  .toLink {
+    height: 60px;
+  }
+  .coverPicture img {
+    height: 170px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .headDecoration p {
+    font-size: 14px;
+  }
+  .headDecoration {
+    height: 100px;
+  }
+  .Cover {
+    width: 100px !important;
+  }
+  .webFromEndUl {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 609px) {
+  .headDecoration p {
+    font-size: 12px;
+  }
+  .headDecoration {
+    height: 85px;
+  }
+  .Cover {
+    width: 85px !important;
+  }
+  .Tips p {
+    font-size: 12px;
+  }
+  .Tips p span {
+    font-size: 12px;
+  }
+  .el-collapse {
+    --el-collapse-header-font-size: 20px;
+    --el-collapse-content-font-size: 12px;
+  }
+  .brieflyExplain {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .externalLink h1 {
+    font-size: 12px;
+  }
+  .externalLink p {
+    font-size: 12px;
+  }
+  .el-collapse {
+    --el-collapse-header-font-size: 20px;
+    --el-collapse-content-font-size: 12px;
+  }
+  .brieflyExplain {
+    font-size: 12px;
+    transform: scale(85%);
+    margin: 0 -6%;
+    width: 110%;
+  }
+  .Tips p span {
+    height: 20px;
+  }
+  .linkType > span {
+    height: 20px;
+  }
+  .password > span {
+    height: 20px;
+  }
+  .toLink {
+    height: 50px;
+  }
+  .password p {
+    transform: translateY(5%);
+  }
+}
+@media screen and (max-width: 525px) {
+  .brieflyExplain {
+    transform: scale(75%);
+    margin: 0 -12%;
+    width: 129%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Tips {
+    flex-direction: column;
+  }
 }
 </style>

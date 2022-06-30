@@ -103,4 +103,12 @@ export default {
   opacity: 0.8;
   z-index: 0;
 }
+@media screen and (max-width: 645px) {
+  .DGR {
+    display: none;
+  }
+  .DGL {
+    display: none;
+  }
+}
 </style>

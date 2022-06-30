@@ -22,7 +22,7 @@
               <h1>
                 <bookshelf
                   theme="two-tone"
-                  size="48"
+                  size="100%"
                   :fill="['#333', '#f5a623']"
                 />{{ Index.title }}
               </h1>
@@ -85,6 +85,10 @@ export default {
 </script>
 
 <style scoped>
+ol,
+ul {
+  padding-left: 0;
+}
 .Cover {
   background: -webkit-linear-gradient(
     left,
@@ -163,5 +167,85 @@ export default {
 .Tips {
   font-size: 18px;
   text-align: center;
+}
+.i-icon {
+  height: 40px !important;
+}
+@media screen and (max-width: 1200px) {
+  .MainContent {
+    width: 93.35%;
+  }
+  .Cover {
+    width: 158px !important;
+  }
+}
+@media screen and (max-width: 974px) {
+  .headDecoration p {
+    font-size: 18px;
+  }
+  .headDecoration {
+    height: 125px;
+  }
+  .Cover {
+    width: 125px !important;
+  }
+}
+@media screen and (max-width: 780px) {
+  .headDecoration p {
+    font-size: 16px;
+  }
+  .headDecoration {
+    height: 110px;
+  }
+  .Cover {
+    width: 110px !important;
+  }
+}
+@media screen and (max-width: 705px) {
+  .Tips p {
+    font-size: 16px;
+  }
+  .routerLink h1 {
+    font-size: 20px;
+  }
+  .i-icon {
+    height: 30px !important;
+  }
+  .routerLink p{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .headDecoration p {
+    font-size: 14px;
+  }
+  .headDecoration {
+    height: 100px;
+  }
+  .Cover {
+    width: 100px !important;
+  }
+  .webFromEndUl {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 609px) {
+  .headDecoration p {
+    font-size: 12px;
+  }
+  .headDecoration {
+    height: 85px;
+  }
+  .Cover {
+    width: 85px !important;
+  }
+}
+@media screen and (max-width: 525px) {
+  .routerLink h1 {
+    font-size: 12px;
+  }
+  .i-icon {
+    height: 20px !important;
+  }
 }
 </style>

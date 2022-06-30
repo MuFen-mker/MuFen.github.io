@@ -71,6 +71,7 @@ export default {
 
 <style scoped>
 .routerLink {
+  color: black;
   display: block;
   text-decoration: none;
   width: 100%;
@@ -105,5 +106,57 @@ export default {
 .routerLink:hover {
   color: rgb(57, 192, 255);
   border-bottom: 3px solid rgb(57, 192, 255);
+}
+@media screen and (max-width: 1200px) {
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .navigationBar > ul > li {
+    width: 15%;
+  }
+}
+@media screen and (max-width: 810px) {
+  .navigationBar > ul > li {
+    width: 16.5%;
+  }
+}
+@media screen and (max-width: 706px) {
+  .navigationBar > ul > li {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 516px) {
+  .navigationBar > ul > li {
+    font-size: 18px;
+  }
+  .routerLink {
+    border-bottom: 2px solid black;
+  }
+  .routerLink:hover {
+  border-bottom: 2px solid rgb(57, 192, 255);
+  }
+  .Activation {
+    border-bottom: 2px solid orange !important;
+  }
+}
+@media screen and (max-width: 456px) {
+  .navigationBar > ul > li {
+    font-size: 15px;
+  }
+  .routerLink {
+    border-bottom: 1px solid black;
+  }
+  .routerLink:hover {
+  border-bottom: 1px solid rgb(57, 192, 255);
+  }
+  .Activation {
+    border-bottom: 1px solid orange !important;
+  }
+}
+@media screen and (max-width: 456px) {
+  .navigationBar > ul > li {
+    font-size: 12px;
+  }
 }
 </style>
