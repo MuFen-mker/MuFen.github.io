@@ -242,6 +242,10 @@ export default {
 @media screen and (max-width: 995px) {
   .navigationBar > ul > li {
     font-size: 20px;
+    border-bottom: 2px solid black;
+  }
+  .Activation {
+    border-bottom: 2px solid orange !important;
   }
 }
 @media screen and (max-width: 775px) {
@@ -271,6 +275,10 @@ export default {
 @media screen and (max-width: 543px) {
   .navigationBar > ul > li {
     font-size: 14px;
+    border-bottom: 1px solid black;
+  }
+  .Activation {
+    border-bottom: 1px solid orange !important;
   }
   .timer h2 {
     font-size: 14px;
