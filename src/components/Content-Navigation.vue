@@ -91,7 +91,7 @@ export default {
   color: orange !important;
 }
 .navigationBar {
-  margin-top: 268.8px;
+  margin-top: 75px;
 }
 .navigationBar > ul {
   text-align: center;
@@ -126,6 +126,11 @@ export default {
     font-size: 20px;
   }
 }
+@media screen and (max-width: 645px) {
+  .navigationBar {
+    margin-top: 45px;
+  }
+}
 @media screen and (max-width: 516px) {
   .navigationBar > ul > li {
     font-size: 18px;
@@ -134,13 +139,16 @@ export default {
     border-bottom: 2px solid black;
   }
   .routerLink:hover {
-  border-bottom: 2px solid rgb(57, 192, 255);
+    border-bottom: 2px solid rgb(57, 192, 255);
   }
   .Activation {
     border-bottom: 2px solid orange !important;
   }
 }
 @media screen and (max-width: 456px) {
+  .navigationBar {
+    margin-top: 20px;
+  }
   .navigationBar > ul > li {
     font-size: 15px;
   }
@@ -148,7 +156,7 @@ export default {
     border-bottom: 1px solid black;
   }
   .routerLink:hover {
-  border-bottom: 1px solid rgb(57, 192, 255);
+    border-bottom: 1px solid rgb(57, 192, 255);
   }
   .Activation {
     border-bottom: 1px solid orange !important;

@@ -43,6 +43,8 @@
                   ref="musicBar"
                   :max="durationOfMusic"
                   min="0"
+                  @touchstart="surgeryNoteClickDown"
+                  @touchmove="surgeryNoteClickUp"
                   @mousedown="surgeryNoteClickDown"
                   @mouseup="surgeryNoteClickUp"
                 />
@@ -242,7 +244,7 @@ export default {
           clearInterval(timer)
           nextSong()
         }
-      }, 100)
+      }, 250)
     }
 
     // 控制播放开关
