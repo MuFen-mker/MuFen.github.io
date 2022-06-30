@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-h1{
+h1 {
   font-size: 24px;
 }
 .header {
@@ -53,7 +53,28 @@ span {
 .avatarAndTitle h1 {
   margin-top: 0.5%;
 }
-
-@media screen {
+@media screen and (max-width: 746px) {
+  .avatarAndTitle img {
+    width: 85px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .avatarAndTitle img {
+    width: 66px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .avatarAndTitle img {
+    width: 58px;
+  }
+  h1 {
+    font-size: 18px;
+  }
 }
 </style>

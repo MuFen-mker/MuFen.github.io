@@ -8,7 +8,7 @@
       </transition>
     </router-view>
     <Index-Bottom></Index-Bottom>
-    <el-backtop style="z-index: 9999999999">
+    <el-backtop style="z-index: 999">
       <div class="topButton">
         <to-top-one theme="two-tone" size="100%" :fill="['#333', '#f5a623']" />
       </div>

@@ -824,13 +824,13 @@ p {
   .progressBarAndButtonBox-Narrow {
     width: 100%;
   }
-    .minimize[data-v-599f5e4a] {
+  .minimize {
     height: 70px;
   }
   .i-icon {
     height: 28px;
   }
-  .NeteaseCloudMusicPlayer-Narrow{
+  .NeteaseCloudMusicPlayer-Narrow {
     height: 70px;
   }
 }
@@ -850,7 +850,7 @@ p {
   .title-Narrow p {
     font-size: 12px;
   }
-  .minimize[data-v-599f5e4a] {
+  .minimize {
     height: 60px;
   }
   .i-icon {
@@ -861,7 +861,7 @@ p {
   }
 }
 @media screen and (max-width: 400px) {
-  .buttons input[data-v-599f5e4a] {
+  .buttons input {
     margin: 0% 0% 0% 10%;
   }
   .title-Narrow h1 {
@@ -870,7 +870,7 @@ p {
   .title-Narrow p {
     font-size: 12px;
   }
-  .minimize[data-v-599f5e4a] {
+  .minimize {
     height: 50px;
   }
   .i-icon {

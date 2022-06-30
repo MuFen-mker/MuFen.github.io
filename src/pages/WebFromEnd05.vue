@@ -2,9 +2,10 @@
   <transition name="enterAnAnimation">
     <div style="overflow-x: auto" v-if="shows" class="webFromEndText">
       <div @click="backToTheUpperLevel()" class="Return">
-        <double-left theme="outline" size="40" fill="#000000" /><span
-          >返回</span
-        >
+        <div class="returnBottom">
+          <double-left theme="outline" size="100%" fill="#000000" />
+        </div>
+        <span>返回</span>
       </div>
       <div class="webFromEndBody">
         <p>
@@ -39,62 +40,24 @@
         <p>
           使用下方模板粘贴至html文件中，需要修改引入文件路径，即可开启Bootstrap3的使用
         </p>
-        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="zh-CN"&gt;
-&lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;!--可以让部分国产浏览器默认采用高速模式渲染页面：--&gt;
-    &lt;meta name="renderer" content="webkit"&gt;
-    &lt;!--使用edge渲染，不使用IE渲染。--&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-    &lt;!--    meta:vp为了保证页面在移动端也正常运行--&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-    &lt;title&gt;Bootstrap3模板&lt;/title&gt;
-    &lt;!-- 导入Bootstrap CSS文件--&gt;
-    &lt;link href="css/bootstrap.css" rel="stylesheet"&gt;
-    &lt;!-- [if xxx] ![endif这个是IE中的条件注释，只有在IE浏览器下才会执行] It:表示小于运算符
-     HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素（header、footer、nav等）和媒体查询（media queries）功能 
-     注意点：由于同源策略，Respond.js文件不能通过file://协议（就是直接将 html 页面拖拽到浏览器中）直接打开，需要在http://（服务器协议）中打开。
-    --&gt;
-    &lt;!--[if It IE 9]&gt;
-    &lt;script src="js/html5shiv.js"&gt;&lt;/script&gt;
-    &lt;script src="js/respond.js"&gt;&lt;/script&gt;
-    &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;你好，世界！&lt;/h1&gt;
-&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;
-&lt;script src="js/jquery-1.12.4.js"&gt;&lt;/script&gt;
-&lt;script src="js/bootstrap.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-        </pre>
+        <prism-editor
+          class="code"
+          v-model="code1"
+          :highlight="highlighter"
+          language="js"
+        >
+        </prism-editor>
         <h1>5.Bootstrap4模板</h1>
         <p>
           使用下方模板粘贴至html文件中，需要修改引入文件路径，即可开启Bootstrap4的使用
         </p>
-        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;!-- Required meta tags --&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;!--    meta:vp为了保证页面在移动端也正常运行--&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
-    &lt;!-- 导入Bootstrap CSS文件--&gt;
-    &lt;link rel="stylesheet" href="css/bootstrap.css"&gt;
-    &lt;title&gt;03.Bootstrap4模板&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;Hello, world!&lt;/h1&gt;
-&lt;script src="js/jquery-1.12.4.js"&gt;&lt;/script&gt;
-&lt;!--在Bootstrap4中很多的提示、弹窗都是通过popper.min.js实现的，所以需要导入--&gt;
-&lt;script src="js/popper.min.js"&gt;&lt;/script&gt;
-&lt;script src="js/bootstrap-4.3.1.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-        </pre>
+        <prism-editor
+          class="code"
+          v-model="code2"
+          :highlight="highlighter"
+          language="js"
+        >
+        </prism-editor>
         <p>
           <strong
             >注意：若使用webStrom编辑器，可设置模板快捷键。便于快速应用模板。</strong
@@ -154,15 +117,13 @@
         <br />
         <br />
         <p>2.Bootstrap栅格系统格式</p>
-        <pre>
-&lt;容器&gt;
-    &lt;行&gt;
-        &lt;列&gt;我们的内容&lt;/列&gt;
-        &lt;列&gt;我们的内容&lt;/列&gt;
-        ... ...
-    &lt;/行&gt;
-&lt;/容器&gt;        
-        </pre>
+        <prism-editor
+          class="code"
+          v-model="code3"
+          :highlight="highlighter"
+          language="js"
+        >
+        </prism-editor>
         <p>3.Bootstrap栅格系统特点</p>
         <p>3.1默认情况下行的宽度和所在容器一样</p>
         <p>3.2默认情况下所有列的宽度是等分所在行的宽度</p>
@@ -189,32 +150,24 @@
         </p>
         <p>2.如果值设置了大屏幕的大小（col-xl-）, 那么小屏幕默认100%</p>
         <p>3.如果大小屏幕都设置了大小, 那么在什么屏幕就显示什么尺寸</p>
-        <pre>
-&lt;div class="col-6"&gt;第1列&lt;/div&gt;
-&lt;div class="col-4"&gt;第2列&lt;/div&gt;
-&lt;div class="col-3"&gt;第3列&lt;/div&gt;
-&lt;div class="col-xl-4"&gt;第2列&lt;/div&gt;
-&lt;div class="col-xl-3"&gt;第3列&lt;/div&gt;
-&lt;div class="col-xl-6 col-lg-1"&gt;第1列&lt;/div&gt;
-&lt;div class="col-xl-4 col-lg-6"&gt;第2列&lt;/div&gt;
-&lt;div class="col-xl-3 col-lg-1"&gt;第3列&lt;/div&gt;
-        </pre>
+        <prism-editor
+          class="code"
+          v-model="code4"
+          :highlight="highlighter"
+          language="js"
+        >
+        </prism-editor>
         <p>6.栅格系统-沟槽</p>
         <p>
           BootStrap默认的栅格和列间有间隙沟槽，一般是左右-15px的margin或padding处理，您可以使用.no-gutters类来消除它，这将影响到.row行、列平行间隙及所有子列
         </p>
-        <pre>
-添加.no-gutters类后，padding消失，但容器左右有间隙
-给容器添加类.px-0，容器左右间隙消失
-&lt;div class="container px-0"&gt;&lt;!--容器--&gt;
-    &lt;div class="row no-gutters"&gt;
-        &lt;div class="col-4"&gt;第1列&lt;/div&gt;
-        &lt;div class="col-4"&gt;第2列&lt;/div&gt;
-        &lt;div class="col-3"&gt;第3列&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-        </pre>
+        <prism-editor
+          class="code"
+          v-model="code5"
+          :highlight="highlighter"
+          language="js"
+        >
+        </prism-editor>
         <p>7.栅格系统列-对齐方式</p>
         <p>
           Bootstrap4的格栅系统是使用伸缩布局实现的,
@@ -245,12 +198,12 @@
         <h1>作者:Cao_Mary</h1>
         <a
           target="_blank"
-          href="https://blog.csdn.net/Cao_Mary/article/details/100533883?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165604165816782425190642%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=165604165816782425190642&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-3-100533883-null-null.142^v21^control,157^v15^new_3&utm_term=bootstrap%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8&spm=1018.2226.3001.4187"
-          ><link-one
-            theme="outline"
-            size="24"
-            fill="#333"
-          />bootstrap基本使用，快速了解bootstrap</a
+          href="https://blog.csdn.net/qq_48578649/article/details/121244389?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_utm_term~default-1-121244389-blog-109198023.pc_relevant_antiscanv3&spm=1001.2101.3001.4242.2&utm_relevant_index=4"
+        >
+          <div class="linkIcon">
+            <link-one theme="outline" size="100%" fill="#333" />
+          </div>
+          bootstrap基本使用，快速了解bootstrap</a
         >
       </div>
     </div>
@@ -258,7 +211,14 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+import { PrismEditor } from 'vue-prism-editor'
+import 'vue-prism-editor/dist/prismeditor.min.css' // import the styles somewhere
+
+import { highlight, languages } from 'prismjs/components/prism-core'
+import 'prismjs/components/prism-clike'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/themes/prism-tomorrow.css' // import syntax highlighting styles
+import { reactive, ref, toRefs } from '@vue/reactivity'
 import { onMounted } from '@vue/runtime-core'
 import { DoubleLeft, LinkOne } from '@icon-park/vue-next'
 import { useRouter } from 'vue-router'
@@ -267,11 +227,26 @@ export default {
   components: {
     DoubleLeft,
     LinkOne,
+    PrismEditor,
   },
   setup() {
     const $router = useRouter()
 
     let shows = ref(false)
+
+    let CodeData = reactive({
+      code1:
+        '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n    <meta charset="utf-8">\n    <!--可以让部分国产浏览器默认采用高速模式渲染页面：-->\n    <meta name="renderer" content="webkit">\n    <!--使用edge渲染，不使用IE渲染。-->\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <!--    meta:vp为了保证页面在移动端也正常运行-->\n    <meta name="viewport" content="width=device-width, initial-scale=1">\n    <title>Bootstrap3模板</title>\n    <!-- 导入Bootstrap CSS文件-->\n    <link href="css/bootstrap.css" rel="stylesheet">\n    <!-- [if xxx] ![endif这个是IE中的条件注释，只有在IE浏览器下才会执行] It:表示小于运算符\n     HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素（header、footer、nav等）和媒体查询（media queries）功能 \n     注意点：由于同源策略，Respond.js文件不能通过file://协议（就是直接将 html 页面拖拽到浏览器中）直接打开，需要在http://（服务器协议）中打开。\n    -->\n    <!--[if It IE 9]>\n    <script src="js/html5shiv.js"><\/script>\n    <script src="js/respond.js"><\/script>\n    <![endif]-->\n</head>\n<body>\n<h1>你好，世界！</h1>\n<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->\n<script src="js/jquery-1.12.4.js"><\/script>\n<script src="js/bootstrap.js"><\/script>\n</body>\n</html>\n',
+      code2:
+        '<!DOCTYPE html>\n<html lang="en">\n<head>\n    <!-- Required meta tags -->\n    <meta charset="utf-8">\n    <!--    meta:vp为了保证页面在移动端也正常运行-->\n    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">\n    <!-- 导入Bootstrap CSS文件-->\n    <link rel="stylesheet" href="css/bootstrap.css">\n    <title>03.Bootstrap4模板</title>\n</head>\n<body>\n<h1>Hello, world!</h1>\n<script src="js/jquery-1.12.4.js"><\/script>\n<!--在Bootstrap4中很多的提示、弹窗都是通过popper.min.js实现的，所以需要导入-->\n<script src="js/popper.min.js"><\/script>\n<script src="js/bootstrap-4.3.1.js"><\/script>\n</body>\n</html>\n',
+      code3:
+        '<容器>\n    <行>\n        <列>我们的内容</列>\n        <列>我们的内容</列>\n        ... ...\n    </行>\n</容器>',
+      code4:
+        '<div class="col-6">第1列</div>\n<div class="col-4">第2列</div>\n<div class="col-3">第3列</div>\n<div class="col-xl-4">第2列</div>\n<div class="col-xl-3">第3列</div>\n<div class="col-xl-6 col-lg-1">第1列</div>\n<div class="col-xl-4 col-lg-6">第2列</div>\n<div class="col-xl-3 col-lg-1">第3列</div>',
+      code5:
+        '添加.no-gutters类后，padding消失，但容器左右有间隙\n给容器添加类.px-0，容器左右间隙消失\n<div class="container px-0"><!--容器-->\n    <div class="row no-gutters">\n        <div class="col-4">第1列</div>\n        <div class="col-4">第2列</div>\n        <div class="col-3">第3列</div>\n    </div>\n</div>',
+    })
+    let inCodeData = reactive({})
 
     const backToTheUpperLevel = function () {
       shows.value = false
@@ -283,32 +258,46 @@ export default {
       shows.value = true
     })
     return {
+      ...toRefs(CodeData),
+      ...toRefs(inCodeData),
       shows,
       backToTheUpperLevel,
     }
+  },
+  methods: {
+    highlighter(code) {
+      return highlight(code, languages.js)
+    },
   },
 }
 </script>
 
 <style scoped>
-pre {
-  background: rgb(233, 233, 233);
-  padding: 1%;
-  width: 50%;
-  margin: 0.5%;
-  color: black;
-  font-family: 'AW';
-  font-size: 12.8px;
+.linkIcon {
+  height: 24px;
+  display: inline-block;
 }
-code {
-  background: rgb(233, 233, 233);
-  padding: 1%;
-  width: 50%;
-  margin: 0.5%;
-  color: black;
-  font-family: 'AW';
-  font-size: 12.8px;
+.returnBottom > .i-icon {
+  height: 48px;
 }
+.inCode {
+  background: #f0f0f0;
+  color: rgb(0, 0, 0);
+  font-family: 'JetBrains';
+  font-size: 16px;
+  width: auto;
+  padding: 5px;
+  display: inline-block;
+}
+.code {
+  background: #f0f0f0;
+  color: rgb(0, 0, 0);
+  font-family: 'JetBrains';
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px;
+}
+
 .webFromEndText {
   width: 100%;
   height: 100%;
@@ -317,22 +306,24 @@ code {
   left: 0;
   border: 3px solid black;
   background: white;
-  z-index: 999;
+  z-index: 999999999999;
   box-sizing: border-box;
 }
 .webFromEndBody {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5% 0;
+  margin: 2% auto;
+  width: 70%;
 }
 .webFromEndBody > p {
   font-size: 16px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 .webFromEndBody > h1 {
   font-size: 24px;
-  margin: 16px 0 0 3.2px;
+  margin: 16px 0;
 }
 .webFromEndBody > a {
   font-size: 24px;
@@ -347,12 +338,11 @@ code {
   position: fixed;
   display: flex;
   align-items: center;
-  top: 160px;
-  left: 32px;
+  top: 30px;
+  left: 20px;
   font-size: 24px;
   padding: 16px 32px 16px 16px;
 }
-
 .Return span {
   display: flex;
   align-items: center;
@@ -372,6 +362,156 @@ code {
   }
   to {
     transform: translateX(0);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .webFromEndBody {
+    margin: 100px auto;
+    width: 98%;
+    align-items: flex-start;
+  }
+  .Return {
+    top: 5px;
+    left: 5px;
+    background: gainsboro;
+    border-radius: 5px;
+    z-index: 999999;
+  }
+}
+@media screen and (max-width: 840px) {
+  .webFromEndBody > h1 {
+    font-size: 18px;
+  }
+  .webFromEndBody > p {
+    font-size: 12px;
+  }
+  .inCode {
+    font-size: 12px;
+  }
+  .code {
+    font-size: 12px;
+  }
+  .Return[data-v-2bbe7d42] {
+    font-size: 20px;
+    padding: 10px 24px 10px 18px;
+  }
+  .webFromEndBody > a {
+    font-size: 18px;
+  }
+  .linkIcon {
+    height: 18px;
+  }
+  .returnBottom > .i-icon {
+    height: 30px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .webFromEndBody > h1 {
+    font-size: 14px;
+  }
+  .webFromEndBody > p {
+    transform: scale(90%);
+  }
+  .Return[data-v-2bbe7d42] {
+    font-size: 16px;
+    padding: 10px 24px 10px 18px;
+  }
+  .webFromEndBody > a {
+    font-size: 14px;
+  }
+  .linkIcon {
+    height: 14px;
+  }
+  .returnBottom > .i-icon {
+    height: 24px;
+  }
+  .code {
+    transform: scale(90%);
+    width: 112%;
+    margin: 0 0 0 -6%;
+  }
+}
+@media screen and (max-width: 585px) {
+  .webFromEndBody > h1 {
+    font-size: 12px;
+  }
+  .webFromEndBody > p {
+    transform: scale(80%);
+    margin: 0 0 0 -7%;
+  }
+  .Return[data-v-2bbe7d42] {
+    font-size: 12px;
+    padding: 10px 24px 10px 18px;
+  }
+  .webFromEndBody > a {
+    font-size: 12px;
+  }
+  .linkIcon {
+    height: 12px;
+  }
+  .returnBottom > .i-icon {
+    height: 16px;
+  }
+  .code {
+    transform: scale(80%);
+    width: 126%;
+    margin: 0 0 0 -13%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .webFromEndBody > h1 {
+    font-size: 12px;
+  }
+  .webFromEndBody > p {
+    transform: scale(70%);
+    margin: 0 0 0 -22%;
+    width: 143%;
+  }
+  .Return[data-v-2bbe7d42] {
+    font-size: 12px;
+    padding: 10px 24px 10px 18px;
+  }
+  .webFromEndBody > a {
+    font-size: 12px;
+  }
+  .linkIcon {
+    height: 12px;
+  }
+  .returnBottom > .i-icon {
+    height: 12px;
+  }
+  .code {
+    transform: scale(70%);
+    width: 142%;
+    margin: 0 0 0 -21%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .webFromEndBody > h1 {
+    font-size: 12px;
+  }
+  .webFromEndBody > p {
+    transform: scale(60%);
+    margin: 0 0 0 -28%;
+    width: 143%;
+  }
+  .Return[data-v-2bbe7d42] {
+    font-size: 12px;
+    padding: 10px 24px 10px 18px;
+  }
+  .webFromEndBody > a {
+    font-size: 12px;
+  }
+  .linkIcon {
+    height: 12px;
+  }
+  .returnBottom > .i-icon {
+    height: 12px;
+  }
+  .code {
+    transform: scale(60%);
+    width: 166%;
+    margin: 0 0 0 -33%;
   }
 }
 </style>

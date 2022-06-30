@@ -247,6 +247,9 @@ export default {
   .Activation {
     border-bottom: 2px solid orange !important;
   }
+  .navigationBar > ul > li:hover {
+    border-bottom: 2px solid rgb(57, 192, 255);
+  }
 }
 @media screen and (max-width: 775px) {
   .navigationBar > ul > li {
@@ -275,10 +278,13 @@ export default {
 @media screen and (max-width: 543px) {
   .navigationBar > ul > li {
     font-size: 14px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
   }
   .Activation {
-    border-bottom: 1px solid orange !important;
+    border-bottom: 2px solid orange !important;
+  }
+  .navigationBar > ul > li:hover {
+    border-bottom: 2px solid rgb(57, 192, 255);
   }
   .timer h2 {
     font-size: 14px;
