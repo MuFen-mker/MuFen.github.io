@@ -41,17 +41,17 @@ canvas {
 }
 @font-face {
   font-family: 'FZCY';
-  src: url('@/assets/font/FZCY.ttf');
+  src: url('@/assets/font/FZCY.woff2');
 }
 
 @font-face {
   font-family: 'AW';
-  src: url('@/assets/font/AW.ttf'),url('@/assets/font/AW.eot'),url('@/assets/font/AW.svg'),url('@/assets/font/AW.woff');
+  src: url('@/assets/font/AW.woff');
 }
 
 @font-face {
   font-family: 'Sweel';
-  src: url('@/assets/font/sweel.ttf'),url('@/assets/font/sweel.eot'),url('@/assets/font/sweel.svg'),url('@/assets/font/sweel.woff');
+  src: url('@/assets/font/sweel.woff');
 }
 .routingTransition-enter-active {
   transition: all 0.5s ease-out;
