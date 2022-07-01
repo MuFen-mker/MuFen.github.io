@@ -39,10 +39,15 @@
 import { Bookshelf } from '@icon-park/vue-next'
 import { reactive, toRefs } from '@vue/reactivity'
 import { nanoid } from 'nanoid'
+
+import useImgLoading from '@/hooks/useImgLoading'
 export default {
   name: 'ContentWebFromEnd',
   components: { Bookshelf },
   setup() {
+
+    const { loading, determinePictureLoading } = useImgLoading()
+
     let WebFromEndData = reactive({
       Slight: [
         {
@@ -79,6 +84,8 @@ export default {
     })
     return {
       ...toRefs(WebFromEndData),
+      loading,
+      determinePictureLoading
     }
   },
 }
@@ -211,7 +218,7 @@ ul {
   .i-icon {
     height: 30px !important;
   }
-  .routerLink p{
+  .routerLink p {
     font-size: 12px;
   }
 }

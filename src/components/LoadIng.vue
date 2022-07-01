@@ -41,7 +41,7 @@
 </template>
 
 <script scoped>
-import { reactive, toRefs, onMounted } from 'vue'
+import { reactive, toRefs, onMounted, onBeforeMount } from 'vue'
 import { useRouter } from 'vue-router'
 export default {
   name: 'LoadIng',
@@ -82,9 +82,12 @@ export default {
       }, 2200)
     }
 
+    onBeforeMount(() => {
+      preLoadedResources()
+    })
+
     onMounted(() => {
       progress()
-      preLoadedResources()
     })
 
     const goInHome = function () {
@@ -94,29 +97,19 @@ export default {
     const preLoadedResources = function () {
       // 图片
       let imgs = [
-        require('@/assets/AE.png'),
-        require('@/assets/AIMP.png'),
         require('@/assets/Avatar.jpg'),
         require('@/assets/CalendarBackground.jpg'),
         require('@/assets/CalendarBackground.jpg'),
-        require('@/assets/ccleane.png'),
         require('@/assets/CommonWebsiteHeadFigure.jpg'),
-        require('@/assets/CPU-Z.png'),
         require('@/assets/DG.png'),
         require('@/assets/DG2.png'),
         require('@/assets/DLL.png'),
         require('@/assets/DLR.png'),
         require('@/assets/DryingTutorialHeadFigure.jpg'),
-        require('@/assets/everything.png'),
-        require('@/assets/huoron.png'),
         require('@/assets/music-one.png'),
         require('@/assets/music-one.svg'),
-        require('@/assets/OBS.png'),
         require('@/assets/playerBackground.jpg'),
-        require('@/assets/PS.png'),
         require('@/assets/SoftwareRecommendationHeadFigure.jpg'),
-        require('@/assets/tasker.png'),
-        require('@/assets/VSC.png'),
         require('@/assets/WebFromEndHeadFigure.jpg'),
       ]
 

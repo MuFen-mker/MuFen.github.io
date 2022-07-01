@@ -8,7 +8,12 @@
         <span>返回</span>
       </div>
       <div class="webFromEndBody">
-        <v-md-preview :text="markDown"></v-md-preview>
+        <el-skeleton :rows="50" :loading="loading" animated>
+          <template #template> </template>
+          <template #default>
+            <v-md-preview :text="markDown"></v-md-preview>
+          </template>
+        </el-skeleton>
       </div>
     </div>
   </transition>
@@ -28,6 +33,8 @@ export default {
   setup() {
     let markDown = ref()
 
+    let loading = ref(true)
+
     let markDownName = ref('')
 
     const $router = useRouter()
@@ -35,13 +42,23 @@ export default {
     let shows = ref(false)
 
     // 获取markdown文件
-    const getMarkDown = function () {
+    const getMarkDown = function (data) {
       let xhr = new XMLHttpRequest()
       // let okStatus = document.location.protocol === 'file:' ? 0 : 200
       xhr.open('GET', `${markDownName.value}.md`, false) // public文件夹下的绝对路径
       xhr.overrideMimeType('text/html;charset=utf-8')
       xhr.send(null)
-      markDown.value = xhr.responseText
+      return xhr.responseText
+    }
+
+    const AssignmentMarkDown = function () {
+      setTimeout(() => {
+        let data = getMarkDown()
+        markDown.value = data
+        setTimeout(() => {
+          loading.value = false
+        }, 500)
+      })
     }
 
     // 获取markdown文件名
@@ -57,14 +74,15 @@ export default {
     }
 
     onMounted(() => {
-      getMarkDownName()
-      getMarkDown()
       shows.value = true
+      getMarkDownName()
+      AssignmentMarkDown()
     })
 
     return {
       shows,
       markDown,
+      loading,
       backToTheUpperLevel,
     }
   },
