@@ -44,7 +44,7 @@
                   :max="durationOfMusic"
                   min="0"
                   @touchstart="surgeryNoteClickDown"
-                  @touchmove="surgeryNoteClickUp"
+                  @touchend="surgeryNoteClickUp"
                   @mousedown="surgeryNoteClickDown"
                   @mouseup="surgeryNoteClickUp"
                 />
