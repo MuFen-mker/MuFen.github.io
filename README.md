@@ -30,7 +30,8 @@ vue-cli-service serve
 ### 引用
 
 ```json
-"amfe-flexible": "^2.2.1",
+    
+    "amfe-flexible": "^2.2.1",
     "axios": "^0.27.2",
     "babel-plugin-import": "^1.13.5",
     "bootstrap-vue": "^2.22.0",
@@ -45,6 +46,7 @@ vue-cli-service serve
     "vue-prism-editor": "^2.0.0-alpha.2",
     "vue-router": "^4.0.16",
     "vuex": "^4.0.2"
+
 ```
 
 
