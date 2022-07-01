@@ -1,4 +1,3 @@
-//vue.config.js页面
 const { defineConfig } = require('@vue/cli-service')
 const webpack = require("webpack")
 

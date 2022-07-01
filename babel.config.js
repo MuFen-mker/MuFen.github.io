@@ -1,5 +1,9 @@
 module.exports = {
   presets: [
-    '@vue/cli-plugin-babel/preset'
-  ]
+    [
+      'prismjs'({
+        languages: ['json', 'vue', 'javascript', 'css'],
+      }),
+    ],
+  ],
 }
