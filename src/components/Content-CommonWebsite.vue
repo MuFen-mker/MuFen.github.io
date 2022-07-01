@@ -148,6 +148,9 @@ export default {
 </script>
 
 <style scoped>
+ul{
+  padding-left: 0;
+}
 .i-icon {
   height: 40px !important;
 }
