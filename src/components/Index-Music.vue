@@ -792,6 +792,9 @@ p {
   p {
     margin-bottom: 0;
   }
+  .NeteaseCloudMusicPlayer {
+    top: 510px;
+  }
 }
 @media screen and (max-width: 746px) {
   .NeteaseCloudMusicPlayer {
@@ -809,13 +812,16 @@ p {
   .Changes {
     display: none;
   }
+  .NeteaseCloudMusicPlayer {
+    top: 490px;
+  }
 }
 @media screen and (max-width: 620px) {
   .musicDuration {
     margin-left: 1%;
   }
   .NeteaseCloudMusicPlayer {
-    top: 460px;
+    top: 468px;
   }
   .title-Narrow h1 {
     font-size: 18px;
@@ -834,6 +840,16 @@ p {
   }
   .NeteaseCloudMusicPlayer-Narrow {
     height: 70px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .NeteaseCloudMusicPlayer {
+    top: 423px;
+  }
+}
+@media screen and (max-width: 543px) {
+  .NeteaseCloudMusicPlayer {
+    top: 417px;
   }
 }
 @media screen and (max-width: 480px) {

@@ -8,11 +8,11 @@
     </ul>
     <ul>
       <li
-        :class="fullDays[index + 1] === day ? 'today' : 'null'"
-        v-for="index in fullDays"
+        :class="fullDays[index] === day ? 'today' : 'null'"
+        v-for="(item, index) in fullDays"
         :key="index"
       >
-        {{ fullDays[index + 1] }}
+        {{ item }}
       </li>
     </ul>
   </div>
@@ -91,7 +91,7 @@ export default {
       }
       // 添加空缺的日期
       for (let i = 1; i < firstDay; i++) {
-        calendarData.fullDays.unshift('')
+        calendarData.fullDays.unshift(' ')
       }
     }
 
@@ -116,7 +116,7 @@ export default {
   padding: 1.32px 0;
   position: relative;
   width: 800px;
-  margin: 440px auto 0;
+  margin: 385px auto 0;
   background: url('@/assets/CalendarBackground.jpg');
   background-size: 100% 150%;
   background-repeat: no-repeat;
@@ -187,9 +187,9 @@ h2 {
   background: rgba(255, 166, 0, 0.11);
   border: 1px solid orange;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .Calendar {
-    margin: 380px auto 0;
+    margin: 340px auto 0;
   }
 }
 @media screen and (max-width: 845px) {
@@ -219,10 +219,10 @@ h2 {
   }
 }
 @media screen and (max-width: 545px) {
-  ul li{
+  ul li {
     margin: 0.5% 1.3%;
   }
-  ul{
+  ul {
     width: 100%;
   }
 }
@@ -232,14 +232,19 @@ h2 {
     transform: scale(0.8);
     margin: 1% 1.2%;
   }
-  h1{
-    font-size:24px;
+  h1 {
+    font-size: 24px;
     margin-top: 20px;
     margin-bottom: 0px;
   }
-  h2{
+  h2 {
     font-size: 18px;
     margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Calendar {
+    margin: 225px auto 0;
   }
 }
 </style>

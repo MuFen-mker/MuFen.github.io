@@ -152,15 +152,6 @@ export default {
   .navigationBar > ul > li {
     font-size: 15px;
   }
-  .routerLink {
-    border-bottom: 1px solid black;
-  }
-  .routerLink:hover {
-    border-bottom: 1px solid rgb(57, 192, 255);
-  }
-  .Activation {
-    border-bottom: 1px solid orange !important;
-  }
 }
 @media screen and (max-width: 456px) {
   .navigationBar > ul > li {
