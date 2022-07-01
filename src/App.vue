@@ -28,6 +28,15 @@ export default {
 </script>
 
 <style>
+.operator {
+  color: #bbbbbb !important;
+}
+.parameter {
+  color: aqua;
+}
+code {
+  color: rgb(87, 188, 255) !important;
+}
 * {
   margin: 0;
   padding: 0;

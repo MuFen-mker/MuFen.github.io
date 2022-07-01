@@ -1,9 +1,11 @@
+// babel.config.js
 module.exports = {
-  presets: [
+  plugins: [
     [
-      'prismjs'({
-        languages: ['json', 'vue', 'javascript', 'css'],
-      }),
+      'prismjs',
+      {
+        languages: ['javascript','html','css'],
+      },
     ],
   ],
-}
+};
