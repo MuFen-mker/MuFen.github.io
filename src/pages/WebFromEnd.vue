@@ -72,8 +72,8 @@ export default {
 </script>
 
 <style scoped>
-*{
-  color: auto;
+.v-md-editor-preview {
+  width: 100%;
 }
 .returnBottom > .i-icon {
   height: 48px;
@@ -163,6 +163,9 @@ export default {
   }
 }
 @media screen and (max-width: 840px) {
+  .v-md-editor-preview {
+    margin-top: -40px;
+  }
   .Return {
     font-size: 20px;
     padding: 10px 24px 10px 18px;
@@ -179,6 +182,9 @@ export default {
   .returnBottom > .i-icon {
     height: 24px;
   }
+  .v-md-editor-preview {
+    margin-top: -60px;
+  }
 }
 @media screen and (max-width: 585px) {
   .Return {
@@ -188,14 +194,8 @@ export default {
   .returnBottom > .i-icon {
     height: 16px;
   }
-}
-@media screen and (max-width: 574px) {
   .v-md-editor-preview {
-    transform: scale(90%);
-    margin: 0 -10%;
-  }
-  .webFromEndBody {
-    margin: 0;
+    margin-top: -70px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -207,12 +207,6 @@ export default {
     height: 12px;
   }
 }
-@media screen and (max-width: 486px) {
-  .v-md-editor-preview {
-    transform: scale(80%);
-    margin: -75px -17%;
-  }
-}
 @media screen and (max-width: 450px) {
   .Return {
     font-size: 12px;
@@ -222,16 +216,10 @@ export default {
     height: 12px;
   }
 }
-@media screen and (max-width: 434px) {
+@media screen and (max-width: 419px) {
   .v-md-editor-preview {
-    transform: scale(70%);
-    margin: -165px -26%;
-  }
-}
-@media screen and (max-width: 434px) {
-  .v-md-editor-preview {
-    transform: scale(55%);
-    margin: -260px -38%;
+    transform: scale(90%);
+    margin-top: -125px;
   }
 }
 </style>
