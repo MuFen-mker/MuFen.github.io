@@ -243,7 +243,7 @@ export default {
   .code {
     font-size: 12px;
   }
-  .Return[data-v-2bbe7d42] {
+  .Return {
     font-size: 20px;
     padding: 10px 24px 10px 18px;
   }
@@ -264,7 +264,7 @@ export default {
   .webFromEndBody > p {
     transform: scale(90%);
   }
-  .Return[data-v-2bbe7d42] {
+  .Return {
     font-size: 16px;
     padding: 10px 24px 10px 18px;
   }
@@ -291,7 +291,7 @@ export default {
     transform: scale(80%);
     margin: 0 0 0 -7%;
   }
-  .Return[data-v-2bbe7d42] {
+  .Return {
     font-size: 12px;
     padding: 10px 24px 10px 18px;
   }
@@ -319,7 +319,7 @@ export default {
     margin: 0 0 0 -22%;
     width: 143%;
   }
-  .Return[data-v-2bbe7d42] {
+  .Return {
     font-size: 12px;
     padding: 10px 24px 10px 18px;
   }
@@ -347,7 +347,7 @@ export default {
     margin: 0 0 0 -28%;
     width: 143%;
   }
-  .Return[data-v-2bbe7d42] {
+  .Return {
     font-size: 12px;
     padding: 10px 24px 10px 18px;
   }
