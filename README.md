@@ -2,7 +2,7 @@
 
 ##### 基于Vue3打造的个人网站
 
-[访问'MuFenの小栈']: https://mu-fen-github-io.vercel.app/
+- [访问'MuFenの小栈'](https://mu-fen-github-io.vercel.app/)
 
 
 
