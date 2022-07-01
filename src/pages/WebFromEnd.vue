@@ -164,7 +164,8 @@ export default {
 }
 @media screen and (max-width: 840px) {
   .v-md-editor-preview {
-    margin-top: -40px;
+    zoom: 85%;
+    margin-top: -60px;
   }
   .Return {
     font-size: 20px;
@@ -183,7 +184,8 @@ export default {
     height: 24px;
   }
   .v-md-editor-preview {
-    margin-top: -60px;
+    zoom: 80%;
+    margin-top: -70px;
   }
 }
 @media screen and (max-width: 585px) {
@@ -195,7 +197,8 @@ export default {
     height: 16px;
   }
   .v-md-editor-preview {
-    margin-top: -70px;
+    zoom: 70%;
+    margin-top: -95px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -205,6 +208,10 @@ export default {
   }
   .returnBottom > .i-icon {
     height: 12px;
+  }
+  .v-md-editor-preview {
+    zoom: 60%;
+    margin-top: -100px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -218,8 +225,8 @@ export default {
 }
 @media screen and (max-width: 419px) {
   .v-md-editor-preview {
-    transform: scale(90%);
-    margin-top: -125px;
+    zoom: 55%;
+    margin-top: -110px;
   }
 }
 </style>
