@@ -44,7 +44,7 @@ export default {
     // 获取markdown文件
     const getMarkDown = function (data) {
       let xhr = new XMLHttpRequest()
-      xhr.open('GET', `${markDownName.value}.md`, false)
+      xhr.open('GET', `markdown/${markDownName.value}.md`, false)
       xhr.overrideMimeType('text/html;charset=utf-8')
       xhr.send(null)
       return xhr.responseText
