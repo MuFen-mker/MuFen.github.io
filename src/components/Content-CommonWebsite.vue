@@ -186,7 +186,7 @@ export default {
       Img.onload = () => {
         setTimeout(() => {
           loading.value = false
-        }, 500)
+        })
       }
       Img.src = ImgPath
     }
