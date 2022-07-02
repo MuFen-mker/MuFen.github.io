@@ -3,14 +3,50 @@
     <router-view></router-view>
     <div class="MainContent">
       <div class="headDecoration">
-        <div>
-          <p>
-            『Where there is a will there is a way，Where there is a will。』
-          </p>
-          <p style="text-align: right">『♪ Determination Symphony-Roselia』</p>
-        </div>
-        <div class="Cover"></div>
-        <img src="@/assets/WebFromEndHeadFigure.jpg" />
+        <el-skeleton style="width: 100%" :loading="loading" animated>
+          <template #template>
+            <div
+              style="
+                padding: 14px;
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+                background-color: white;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-around;
+                  width: 80%;
+                "
+              >
+                <el-skeleton-item variant="h3" style="width: 100%" />
+                <el-skeleton-item variant="h3" style="width: 100%" />
+                <el-skeleton-item variant="h3" style="width: 100%" />
+              </div>
+
+              <el-skeleton-item
+                variant="image"
+                style="aspect-ratio: 1/1; height: 100%"
+              />
+            </div>
+          </template>
+          <template #default>
+            <div>
+              <p>
+                『Where there is a will there is a way，Where there is a
+                will。』
+              </p>
+              <p style="text-align: right">
+                『♪ Determination Symphony-Roselia』
+              </p>
+            </div>
+            <div class="Cover"></div>
+            <img :src="haeDerImg" />
+          </template>
+        </el-skeleton>
       </div>
       <div class="Tips">
         <p>个人收集并整理的前端相关文章</p>
@@ -41,12 +77,25 @@ import { reactive, toRefs } from '@vue/reactivity'
 import { nanoid } from 'nanoid'
 
 import useImgLoading from '@/hooks/useImgLoading'
+import { onMounted } from '@vue/runtime-core'
 export default {
   name: 'ContentWebFromEnd',
   components: { Bookshelf },
   setup() {
+    let ImgPath = require('@/assets/WebFromEndHeadFigure.jpg')
+    const haeDerImg = ImgPath
 
-    const { loading, determinePictureLoading } = useImgLoading()
+    const getImgPath = function () {
+      let Img = new Image()
+      Img.onload = () => {
+        setTimeout(() => {
+          loading.value = false
+        }, 500)
+      }
+      Img.src = ImgPath
+    }
+
+    const { loading } = useImgLoading()
 
     let WebFromEndData = reactive({
       Slight: [
@@ -82,10 +131,15 @@ export default {
         },
       ],
     })
+
+    onMounted(() => {
+      getImgPath()
+    })
+
     return {
       ...toRefs(WebFromEndData),
       loading,
-      determinePictureLoading
+      haeDerImg,
     }
   },
 }

@@ -26,7 +26,7 @@
             label-class-name="my-label"
             class-name="my-content"
             width="150px"
-            >项目核心，总体构建</el-descriptions-item
+            >项目核心</el-descriptions-item
           >
           <el-descriptions-item
             label="VueRouter"
@@ -47,13 +47,13 @@
             >Vue组件状态管理</el-descriptions-item
           >
           <el-descriptions-item
-            label="vue-prism-editor"
+            label="v-md-editor"
             label-align="center"
             align="center"
             label-class-name="my-label"
             class-name="my-content"
             width="150px"
-            >页面代码块</el-descriptions-item
+            >markdown解析</el-descriptions-item
           >
           <el-descriptions-item
             label="Axios"
@@ -62,7 +62,7 @@
             label-class-name="my-label"
             class-name="my-content"
             width="150px"
-            >发送一言请求，音乐播放器请求</el-descriptions-item
+            >发送请求</el-descriptions-item
           >
           <el-descriptions-item
             label="element-plus"

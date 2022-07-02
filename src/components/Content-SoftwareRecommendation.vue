@@ -2,12 +2,45 @@
   <div>
     <div class="MainContent">
       <div class="headDecoration">
-        <div>
-          <p>『例え明日が，行き止まりでも，自分の手で，切り開くんだ。』</p>
-          <p style="text-align: right">『♪ BLACK SHOUT-Roselia』</p>
-        </div>
-        <div class="Cover"></div>
-        <img src="@/assets/SoftwareRecommendationHeadFigure.jpg" />
+        <el-skeleton style="width: 100%" :loading="loading" animated>
+          <template #template>
+            <div
+              style="
+                padding: 14px;
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+                background-color: white;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-around;
+                  width: 80%;
+                "
+              >
+                <el-skeleton-item variant="h3" style="width: 100%" />
+                <el-skeleton-item variant="h3" style="width: 100%" />
+                <el-skeleton-item variant="h3" style="width: 100%" />
+              </div>
+
+              <el-skeleton-item
+                variant="image"
+                style="aspect-ratio: 1/1; height: 100%"
+              />
+            </div>
+          </template>
+          <template #default>
+            <div>
+              <p>『例え明日が，行き止まりでも，自分の手で，切り開くんだ。』</p>
+              <p style="text-align: right">『♪ BLACK SHOUT-Roselia』</p>
+            </div>
+            <div class="Cover"></div>
+            <img :src="haeDerImg" />
+          </template>
+        </el-skeleton>
       </div>
       <div class="Tips">
         <p>
@@ -95,6 +128,9 @@
 import { Android, Windows, OpenOne, DownloadFour } from '@icon-park/vue-next'
 import { reactive, toRefs, ref } from '@vue/reactivity'
 import { nanoid } from 'nanoid'
+
+import useImgLoading from '@/hooks/useImgLoading'
+import { onMounted } from '@vue/runtime-core'
 export default {
   name: 'ContentDryingTutorial',
   components: {
@@ -104,6 +140,9 @@ export default {
     DownloadFour,
   },
   setup() {
+    const { loading } = useImgLoading()
+    let ImgPath = require('@/assets/SoftwareRecommendationHeadFigure.jpg')
+    const haeDerImg = ImgPath
     let activeName = ref(null)
     let WebFromEndData = reactive({
       Slight: [
@@ -209,9 +248,26 @@ export default {
         },
       ],
     })
+
+    const getImgPath = function () {
+      let Img = new Image()
+      Img.onload = () => {
+        setTimeout(() => {
+          loading.value = false
+        },500)
+      }
+      Img.src = ImgPath
+    }
+
+    onMounted(() => {
+      getImgPath()
+    })
+
     return {
       ...toRefs(WebFromEndData),
       activeName,
+      loading,
+      haeDerImg,
     }
   },
 }

@@ -2,12 +2,47 @@
   <div>
     <div class="MainContent">
       <div class="headDecoration">
-        <div>
-          <p>『自分を責めないで抱きしめなさい，弱さを知る者は強さを宿す。』</p>
-          <p style="text-align: right">『♪ BRAVE JEWEL-Roselia』</p>
-        </div>
-        <div class="Cover"></div>
-        <img src="@/assets/CommonWebsiteHeadFigure.jpg" />
+        <el-skeleton style="width: 100%" :loading="loading" animated>
+          <template #template>
+            <div
+              style="
+                padding: 14px;
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+                background-color: white;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-around;
+                  width: 80%;
+                "
+              >
+                <el-skeleton-item variant="h3" style="width: 100%" />
+                <el-skeleton-item variant="h3" style="width: 100%" />
+                <el-skeleton-item variant="h3" style="width: 100%" />
+              </div>
+
+              <el-skeleton-item
+                variant="image"
+                style="aspect-ratio: 1/1; height: 100%"
+              />
+            </div>
+          </template>
+          <template #default>
+            <div>
+              <p>
+                『自分を責めないで抱きしめなさい，弱さを知る者は強さを宿す。』
+              </p>
+              <p style="text-align: right">『♪ BRAVE JEWEL-Roselia』</p>
+            </div>
+            <div class="Cover"></div>
+            <img :src="haeDerImg" />
+          </template>
+        </el-skeleton>
       </div>
       <div class="Tips">
         <p>收藏的一些不错的网站(正经的)</p>
@@ -36,10 +71,16 @@
 import { Browser } from '@icon-park/vue-next'
 import { reactive, toRefs } from '@vue/reactivity'
 import { nanoid } from 'nanoid'
+
+import useImgLoading from '@/hooks/useImgLoading'
+import { onMounted } from '@vue/runtime-core'
 export default {
   name: 'ContentDryingTutorial',
   components: { Browser },
   setup() {
+    let ImgPath = require('@/assets/CommonWebsiteHeadFigure.jpg')
+    const haeDerImg = ImgPath
+    const { loading } = useImgLoading()
     let WebFromEndData = reactive({
       Slight: [
         {
@@ -140,15 +181,32 @@ export default {
         },
       ],
     })
+
+    const getImgPath = function () {
+      let Img = new Image()
+      Img.onload = () => {
+        setTimeout(() => {
+          loading.value = false
+        }, 500)
+      }
+      Img.src = ImgPath
+    }
+
+    onMounted(() => {
+      getImgPath()
+    })
+
     return {
       ...toRefs(WebFromEndData),
+      haeDerImg,
+      loading,
     }
   },
 }
 </script>
 
 <style scoped>
-ul{
+ul {
   padding-left: 0;
 }
 .i-icon {
