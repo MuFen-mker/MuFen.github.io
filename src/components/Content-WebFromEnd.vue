@@ -24,7 +24,6 @@
               >
                 <el-skeleton-item variant="h3" style="width: 100%" />
                 <el-skeleton-item variant="h3" style="width: 100%" />
-                <el-skeleton-item variant="h3" style="width: 100%" />
               </div>
 
               <el-skeleton-item
