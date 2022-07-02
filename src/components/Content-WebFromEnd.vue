@@ -48,7 +48,7 @@
         </el-skeleton>
       </div>
       <div class="Tips">
-        <p>个人收集并整理的前端相关文章</p>
+        <p>前端相关的一些东西</p>
       </div>
       <div>
         <ul class="webFromEndUl">
