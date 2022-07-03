@@ -128,11 +128,17 @@ export default {
           text: '本文只涉及bootstrap基本使用，不提供代码案例。以便于快速了解bootstrap是什么。详细使用规则还是要看官方文档。注意：bootstrap的核心是掌握容器和栅格系统...',
           routersRun: '05',
         },
-                {
+        {
           id: nanoid(),
           title: '个人前端学习路线',
           text: '介绍自身学习前端的路线规划。',
           routersRun: '06',
+        },
+        {
+          id: nanoid(),
+          title: '关于JS预解析的经典题目',
+          text: 'JS预解析与作用域链相关的经典题目和解法。',
+          routersRun: '07',
         },
       ],
     })

@@ -72,6 +72,11 @@ const router = createRouter({
               path: '06',
               component: WebFromEnd,
             },
+            {
+              name: '07',
+              path: '07',
+              component: WebFromEnd,
+            },
           ],
         },
         {
