@@ -214,6 +214,7 @@ export default {
     height: 16px;
   }
   .v-md-editor-preview {
+    -moz-transform: translateY(20px);
     zoom: 70%;
     margin-top: -95px;
   }
@@ -242,6 +243,7 @@ export default {
 }
 @media screen and (max-width: 419px) {
   .v-md-editor-preview {
+    -moz-transform: translateY(45px);
     zoom: 55%;
     margin-top: -110px;
   }

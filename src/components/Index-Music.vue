@@ -84,20 +84,16 @@
               </div>
             </div>
           </div>
-          <div>
+          <div class="CoverContainer">
             <div v-show="topMode" class="maskLayer-Narrow"></div>
             <img :class="topMode ? 'Cover-Narrow' : 'Cover'" :src="Cover" />
           </div>
         </div>
       </transition>
       <transition name="goInIndex">
-        <div
-          v-if="topMode && minimize && hiddenMini"
-          class="minimize"
-          @click="minimize = false"
-        >
+        <div v-if="topMode && minimize && hiddenMini" class="minimize">
           <img class="Cover-Mini" :src="Cover" />
-          <div class="RightOne">
+          <div @click="minimize = false" class="RightOne">
             <right-one theme="outline" size="100%" fill="#000000" />
           </div>
         </div>
@@ -425,6 +421,9 @@ export default {
 </script>
 
 <style scoped>
+.CoverContainer {
+  height: 100%;
+}
 p {
   margin-bottom: 0;
 }
@@ -488,7 +487,7 @@ p {
 .title p {
   display: block;
   color: white;
-  font-size: 1.16px;
+  font-size: 16px;
   width: 50%;
   text-align: left;
   white-space: wrap;
@@ -573,8 +572,8 @@ p {
   position: absolute;
   display: flex;
   left: 0;
+  width: 100%;
   height: 80px;
-  background: rgb(240, 240, 240);
   z-index: -1;
   border-radius: 0 3px 3px 0;
 }
@@ -587,7 +586,7 @@ p {
   background: rgb(230, 230, 230);
 }
 .RightOne:hover {
-  background: rgba(128, 128, 128, 0.3);
+  background: rgb(202, 202, 202);
 }
 .NeteaseCloudMusicPlayer-Narrow {
   -webkit-touch-callout: none;
@@ -638,7 +637,7 @@ p {
 }
 .title-Narrow p {
   display: block;
-  font-size: 1.16px;
+  font-size: 16px;
   width: 100%;
   text-align: left;
   white-space: wrap;
@@ -750,6 +749,7 @@ p {
 }
 .Cover-Mini {
   border-right: 2px solid #999999;
+  background: rgb(240, 240, 240);
 }
 .playingTime {
   display: flex;
