@@ -69,6 +69,7 @@ export default {
       () => store.state.shows,
       (newValue) => {
         if (newValue === true) {
+          loading.value = true
           markDownName.value = store.state.markDownName
           AssignmentMarkDown()
         }
