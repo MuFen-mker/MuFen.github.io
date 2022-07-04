@@ -9,10 +9,6 @@ export default {
       text: '2022-6-6',
     },
     {
-      title: 'vue2 + vue-video-player 视频播放器',
-      text: '2022-6-12',
-    },
-    {
       title: 'vue生命周期的理解',
       text: '2022-6-13',
     },

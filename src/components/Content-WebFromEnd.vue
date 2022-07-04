@@ -49,29 +49,26 @@
       <div class="Tips">
         <p>个人收藏与创作的一些文章</p>
       </div>
-      <transition name="displayNone">
-        <div v-show="!$store.state.shows">
-          <ul class="webFromEndUl">
-            <li
-              @click="ChangeTheDisplay(Index.title)"
-              v-for="Index in Slight"
-              :key="Index.id"
-            >
-              <a class="routerLink">
-                <h1>
-                  <bookshelf
-                    theme="two-tone"
-                    size="100%"
-                    :fill="['#333', '#f5a623']"
-                  />{{ Index.title }}
-                </h1>
-                <p>{{ Index.text }}</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </transition>
-
+      <div>
+        <ul class="webFromEndUl">
+          <li
+            @click="ChangeTheDisplay(Index.title)"
+            v-for="Index in Slight"
+            :key="Index.id"
+          >
+            <a class="routerLink">
+              <h1>
+                <bookshelf
+                  theme="two-tone"
+                  size="100%"
+                  :fill="['#333', '#f5a623']"
+                />{{ Index.title }}
+              </h1>
+              <p>{{ Index.text }}</p>
+            </a>
+          </li>
+        </ul>
+      </div>
       <webFromEnd></webFromEnd>
     </div>
   </div>
@@ -302,14 +299,5 @@ ul {
   .i-icon {
     height: 20px !important;
   }
-}
-.displayNone-leave-active {
-  transition: all 0.7s;
-}
-.displayNone-leave-to {
-  opacity: 0;
-}
-.displayNone-leave-from {
-  opacity: 1;
 }
 </style>
