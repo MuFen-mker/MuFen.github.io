@@ -1,6 +1,10 @@
 <template>
   <transition name="enterAnAnimation">
-    <div style="overflow-x: auto" v-if="shows" class="webFromEndText">
+    <div
+      style="overflow-x: auto"
+      v-if="$store.state.shows"
+      class="webFromEndText"
+    >
       <div @click="backToTheUpperLevel()" class="Return">
         <div class="returnBottom">
           <double-left theme="outline" size="100%" fill="#000000" />
@@ -21,28 +25,25 @@
 
 <script>
 import { ref } from '@vue/reactivity'
-import { onMounted } from '@vue/runtime-core'
+import { watch } from '@vue/runtime-core'
 import { DoubleLeft } from '@icon-park/vue-next'
-import { useRouter } from 'vue-router'
-
+import { useStore } from 'vuex'
 export default {
   name: 'webFromEndText',
   components: {
     DoubleLeft,
   },
   setup() {
+    const store = useStore()
+
     let markDown = ref()
 
     let loading = ref(true)
 
     let markDownName = ref('')
 
-    const $router = useRouter()
-
-    let shows = ref(false)
-
     // 获取markdown文件
-    const getMarkDown = function (data) {
+    const getMarkDown = function () {
       let xhr = new XMLHttpRequest()
       xhr.open('GET', `markdown/${markDownName.value}.md`, false)
       xhr.overrideMimeType('text/html;charset=utf-8')
@@ -60,26 +61,22 @@ export default {
       })
     }
 
-    // 获取markdown文件名
-    const getMarkDownName = function () {
-      markDownName.value = $router.currentRoute.value.path.slice(-2)
-    }
-
     const backToTheUpperLevel = function () {
-      shows.value = false
-      setTimeout(() => {
-        $router.push({ name: 'WebFromEnd' })
-      }, 1000)
+      store.commit('WebFromEnd')
     }
 
-    onMounted(() => {
-      shows.value = true
-      getMarkDownName()
-      AssignmentMarkDown()
-    })
+    watch(
+      () => store.state.shows,
+      (newValue) => {
+        if (newValue === true) {
+          markDownName.value = store.state.markDownName
+          AssignmentMarkDown()
+        }
+      }
+    )
 
     return {
-      shows,
+      store,
       markDown,
       loading,
       backToTheUpperLevel,

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-view></router-view>
     <div class="MainContent">
       <div class="headDecoration">
         <el-skeleton style="width: 100%" :loading="loading" animated>
@@ -50,22 +49,30 @@
       <div class="Tips">
         <p>个人收藏与创作的一些文章</p>
       </div>
-      <div>
-        <ul class="webFromEndUl">
-          <li v-for="Index in Slight" :key="Index.id">
-            <router-link class="routerLink" :to="{ name: Index.routersRun }">
-              <h1>
-                <bookshelf
-                  theme="two-tone"
-                  size="100%"
-                  :fill="['#333', '#f5a623']"
-                />{{ Index.title }}
-              </h1>
-              <p>{{ Index.text }}</p>
-            </router-link>
-          </li>
-        </ul>
-      </div>
+      <transition name="displayNone">
+        <div v-show="!$store.state.shows">
+          <ul class="webFromEndUl">
+            <li
+              @click="ChangeTheDisplay(Index.title)"
+              v-for="Index in Slight"
+              :key="Index.id"
+            >
+              <a class="routerLink">
+                <h1>
+                  <bookshelf
+                    theme="two-tone"
+                    size="100%"
+                    :fill="['#333', '#f5a623']"
+                  />{{ Index.title }}
+                </h1>
+                <p>{{ Index.text }}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </transition>
+
+      <webFromEnd></webFromEnd>
     </div>
   </div>
 </template>
@@ -75,12 +82,15 @@ import { Bookshelf } from '@icon-park/vue-next'
 import { reactive, toRefs } from '@vue/reactivity'
 import { nanoid } from 'nanoid'
 
+import { useStore } from 'vuex'
 import useImgLoading from '@/hooks/useImgLoading'
 import { onMounted } from '@vue/runtime-core'
+import webFromEnd from '@/pages/WebFromEnd.vue'
 export default {
   name: 'ContentWebFromEnd',
-  components: { Bookshelf },
+  components: { Bookshelf, webFromEnd },
   setup() {
+    const store = useStore()
     let ImgPath = require('@/assets/WebFromEndHeadFigure.jpg')
     const haeDerImg = ImgPath
 
@@ -97,60 +107,33 @@ export default {
     const { loading } = useImgLoading()
 
     let WebFromEndData = reactive({
-      Slight: [
-        {
-          id: nanoid(),
-          title: 'Axios在vue3中的使用教程及注意事项',
-          text: '2022-6-4',
-          routersRun: '01',
-        },
-        {
-          id: nanoid(),
-          title: 'Vue中 关于$emit的用法',
-          text: '2022-6-6',
-          routersRun: '02',
-        },
-        {
-          id: nanoid(),
-          title: 'vue2 + vue-video-player 视频播放器',
-          text: '2022-6-12',
-          routersRun: '03',
-        },
-        {
-          id: nanoid(),
-          title: 'vue生命周期的理解',
-          text: '2022-6-13',
-          routersRun: '04',
-        },
-        {
-          id: nanoid(),
-          title: 'bootstrap基本使用，快速了解bootstrap',
-          text: '2022-6-17',
-          routersRun: '05',
-        },
-        {
-          id: nanoid(),
-          title: '个人前端学习路线',
-          text: '2022-7-2',
-          routersRun: '06',
-        },
-        {
-          id: nanoid(),
-          title: '关于JS预解析的经典题目',
-          text: '2022-7-3',
-          routersRun: '07',
-        },
-      ],
+      Slight: [],
     })
 
+    // 获取markdown文件名
+    const getMarkDownName = function () {
+      const filses = require('@/../public/markdown/markDownPath.js')
+      const fileInformation = filses.default
+      WebFromEndData.Slight = fileInformation.Slight
+      for (let index = 0; index < WebFromEndData.Slight.length; index++) {
+        WebFromEndData.Slight[index].id = nanoid()
+      }
+    }
+    const ChangeTheDisplay = function (title) {
+      store.commit('changMarkdownName', title)
+      store.commit('WebFromEnd')
+    }
     onMounted(() => {
       getImgPath()
+      getMarkDownName()
     })
 
     return {
       ...toRefs(WebFromEndData),
       loading,
       haeDerImg,
+      store,
+      ChangeTheDisplay,
     }
   },
 }
@@ -319,5 +302,14 @@ ul {
   .i-icon {
     height: 20px !important;
   }
+}
+.displayNone-leave-active {
+  transition: all 0.7s;
+}
+.displayNone-leave-to {
+  opacity: 0;
+}
+.displayNone-leave-from {
+  opacity: 1;
 }
 </style>
