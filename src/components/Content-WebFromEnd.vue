@@ -48,7 +48,7 @@
         </el-skeleton>
       </div>
       <div class="Tips">
-        <p>前端相关的一些东西</p>
+        <p>个人收藏与创作的一些文章</p>
       </div>
       <div>
         <ul class="webFromEndUl">
@@ -101,43 +101,43 @@ export default {
         {
           id: nanoid(),
           title: 'Axios在vue3中的使用教程及注意事项',
-          text: '引入首先运行npm install --save axios vue-axios命令安装axios和vue-axios在vue3项目的main.js文件中插入以下代码引入axios，注意vue-axios和axios需要搭配使用...',
+          text: '2022-6-4',
           routersRun: '01',
         },
         {
           id: nanoid(),
           title: 'Vue中 关于$emit的用法',
-          text: 'vue2.x1、父组件可以使用 props 把数据传给子组件。2、子组件可以使用 $emit,让父组件监听到自定义事件 。vm.$emit( event, arg ) //触发当前实例上的事件vm.$on( event, fn );//监听event事件后运行 fn； 例如：子组件...',
+          text: '2022-6-6',
           routersRun: '02',
         },
         {
           id: nanoid(),
           title: 'vue2 + vue-video-player 视频播放器',
-          text: '1、安装该插件,2、项目main.js中引入,3、页面代码...',
+          text: '2022-6-12',
           routersRun: '03',
         },
         {
           id: nanoid(),
           title: 'vue生命周期的理解',
-          text: '一.Vue生命周期简介,官网：https://cn.vuejs.org/v2/api/#beforeCreate,Vue实例从创建到销毁的过程，就是生命周期。详细来说也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程。...',
+          text: '2022-6-13',
           routersRun: '04',
         },
         {
           id: nanoid(),
           title: 'bootstrap基本使用，快速了解bootstrap',
-          text: '本文只涉及bootstrap基本使用，不提供代码案例。以便于快速了解bootstrap是什么。详细使用规则还是要看官方文档。注意：bootstrap的核心是掌握容器和栅格系统...',
+          text: '2022-6-17',
           routersRun: '05',
         },
         {
           id: nanoid(),
           title: '个人前端学习路线',
-          text: '介绍自身学习前端的路线规划。',
+          text: '2022-7-2',
           routersRun: '06',
         },
         {
           id: nanoid(),
           title: '关于JS预解析的经典题目',
-          text: 'JS预解析与作用域链相关的经典题目和解法。',
+          text: '2022-7-3',
           routersRun: '07',
         },
       ],
