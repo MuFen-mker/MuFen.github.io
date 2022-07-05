@@ -178,6 +178,18 @@ export default {
           text: 'Web图片压缩工具，快速压缩PNG格式的图片，让页面加载更快~',
           routersRun: 'https://tinypng.com/',
         },
+        {
+          id: nanoid(),
+          title: 'MDN文档',
+          text: '不懂就问，不会就查，多种JS内置方法可供查阅',
+          routersRun: 'https://developer.mozilla.org/zh-CN/',
+        },
+        {
+          id: nanoid(),
+          title: 'Vercel',
+          text: '强大的网站托管平台，更快的速度(哦我的上帝，这玩意可比GithubPage好使多了)',
+          routersRun: 'https://vercel.com/',
+        },
       ],
     })
 
