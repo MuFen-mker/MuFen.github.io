@@ -103,22 +103,27 @@ export default {
       }, 3000)
     }
 
+    const TimeAndDate = function () {
+      let yy = new Date().getFullYear() //年
+      let mm = new Date().getMonth() + 1 //月
+      let dd = new Date().getDate() //日
+      let hh = new Date().getHours() //小时
+      let mf =
+        new Date().getMinutes() < 10
+          ? '0' + new Date().getMinutes()
+          : new Date().getMinutes() //分钟
+      let ss =
+        new Date().getSeconds() < 10
+          ? '0' + new Date().getSeconds()
+          : new Date().getSeconds() //秒
+      pageDate.time =
+        yy + '年' + mm + '月' + dd + '日  ' + hh + ':' + mf + ':' + ss
+    }
+
     const getTimeAndDate = function () {
+      TimeAndDate()
       pageDate.Timer = setInterval(() => {
-        let yy = new Date().getFullYear() //年
-        let mm = new Date().getMonth() + 1 //月
-        let dd = new Date().getDate() //日
-        let hh = new Date().getHours() //小时
-        let mf =
-          new Date().getMinutes() < 10
-            ? '0' + new Date().getMinutes()
-            : new Date().getMinutes() //分钟
-        let ss =
-          new Date().getSeconds() < 10
-            ? '0' + new Date().getSeconds()
-            : new Date().getSeconds() //秒
-        pageDate.time =
-          yy + '年' + mm + '月' + dd + '日  ' + hh + ':' + mf + ':' + ss
+        TimeAndDate()
       }, 1000)
     }
 
