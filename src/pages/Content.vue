@@ -44,8 +44,8 @@ export default {
   --el-backtop-hover-bg-color: #ffffff00;
   background-color: #ffffff00;
   box-shadow: none;
-  right: 140px !important;
-  bottom: 160px !important;
+  right: 2% !important;
+  bottom: 2% !important;
 }
 .routingTransition-enter-active {
   transition: all 0.5s ease-out;
@@ -66,13 +66,7 @@ export default {
 @media screen and (max-width: 1480px) {
   .el-backtop {
     right: 2% !important;
-    bottom: 10% !important;
-  }
-}
-@media screen and (max-width: 666px) {
-  .el-backtop {
-    right: 2% !important;
-    bottom: 10% !important;
+    bottom: 5% !important;
   }
 }
 </style>
