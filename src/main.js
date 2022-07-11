@@ -31,5 +31,6 @@ createApp(App)
     loading: require('@/static/load.jpg'),
     lazyComponent: true,
     throttleWait: 500,
+    preLoad: 0,
   })
   .mount('#app')
