@@ -99,18 +99,13 @@ export default {
       let imgs = [
         require('@/assets/Avatar.jpg'),
         require('@/assets/CalendarBackground.jpg'),
-        require('@/assets/CalendarBackground.jpg'),
-        require('@/assets/CommonWebsiteHeadFigure.jpg'),
         require('@/assets/DG.png'),
         require('@/assets/DG2.png'),
         require('@/assets/DLL.png'),
         require('@/assets/DLR.png'),
-        require('@/assets/DryingTutorialHeadFigure.jpg'),
         require('@/assets/music-one.png'),
         require('@/assets/music-one.svg'),
         require('@/assets/playerBackground.jpg'),
-        require('@/assets/SoftwareRecommendationHeadFigure.jpg'),
-        require('@/assets/WebFromEndHeadFigure.jpg'),
       ]
 
       for (let img of imgs) {
