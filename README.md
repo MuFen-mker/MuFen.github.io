@@ -60,40 +60,42 @@ vue-cli-service serve
 │  package-lock.json
 │  package.json
 │  README.md
-│  Readme.txt
+│  readme.txt；
 │  vue.config.js
 │  
 ├─public
-│      favicon.ico
-│      index.html
-│      
+│  │  favicon.ico
+│  │  index.html
+│  │  
+│  └─markdown
+│          Axios在vue3中的使用教程及注意事项.md
+│          bootstrap基本使用，快速了解bootstrap.md
+│          markDownPath.js
+│          Vue中 关于$emit的用法.md
+│          vue生命周期的理解.md
+│          个人前端学习路线.md
+│          使用构造函数时new关键字做了什么.md
+│          全选框小案例.md
+│          关于JS预解析的经典题目.md
+│          手写原生轮播图.md
+│          
 └─src
     │  App.vue
     │  main.js
     │  
     ├─assets
-    │  │  AE.png
-    │  │  AIMP.png
     │  │  Avatar.jpg
     │  │  CalendarBackground.jpg
-    │  │  ccleane.png
     │  │  CommonWebsiteHeadFigure.jpg
-    │  │  CPU-Z.png
     │  │  DG.png
     │  │  DG2.png
     │  │  DLL.png
     │  │  DLR.png
     │  │  DryingTutorialHeadFigure.jpg
-    │  │  everything.png
-    │  │  huoron.png
     │  │  music-one.png
     │  │  music-one.svg
-    │  │  OBS.png
     │  │  playerBackground.jpg
-    │  │  PS.png
     │  │  SoftwareRecommendationHeadFigure.jpg
-    │  │  tasker.png
-    │  │  VSC.png
     │  │  WebFromEndHeadFigure.jpg
     │  │  
     │  └─font
@@ -120,18 +122,35 @@ vue-cli-service serve
     │      headerBackground.js
     │      stopUpDownFunList.js
     │      stopUpDownFunList2.js
+    │      useImgLoading.js
     │      
     ├─pages
     │      About.vue
     │      Content.vue
     │      Home.vue
-    │      WebFromEnd01.vue
-    │      WebFromEnd02.vue
-    │      WebFromEnd03.vue
-    │      WebFromEnd04.vue
-    │      WebFromEnd05.vue
+    │      WebFromEnd.vue
     │      
-    └─Router
+    ├─Router
+    │      index.js
+    │      
+    ├─static
+    │      AE.png
+    │      AIMP.png
+    │      ccleane.png
+    │      CPU-Z.png
+    │      error.jpg
+    │      everything.png
+    │      huoron.png
+    │      load.jpg
+    │      OBS.png
+    │      PS.png
+    │      tasker.png
+    │      VSC.png
+    │      
+    └─store
+            actions.js
             index.js
+            mutations.js
+            state.js
 ```
 
