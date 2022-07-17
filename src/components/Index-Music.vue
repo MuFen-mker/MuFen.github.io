@@ -862,6 +862,9 @@ p {
   .title h1 {
     font-size: 16px;
   }
+  .title p {
+    font-size: 12px;
+  }
   .title-Narrow h1 {
     font-size: 16px;
   }

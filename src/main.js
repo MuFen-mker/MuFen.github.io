@@ -1,11 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './Router/index.js'
-
-import $ from 'jquery'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
-
 import store from './store'
 
 import VueLazyload from 'vue-lazyload'
@@ -24,7 +19,6 @@ VMdPreview.use(vuepressTheme, {
 createApp(App)
   .use(router)
   .use(store)
-  .use($)
   .use(VMdPreview)
   .use(VueLazyload, {
     error: require('@/static/error.jpg'),
